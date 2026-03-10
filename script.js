@@ -1,16 +1,5 @@
-function submitMail(){
-let mail = {
-title: document.getElementById("title").value,
-name: document.getElementById("name").value,
-message: document.getElementById("message").value,
-email: document.getElementById("email").value
-}
-emailjs.send("service_cajwo1c","template_3qv43gg", mail).then(alert("Message Sent!"));
-}
 
-// Project Modal & Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Project Swiper
     const projectSwiper = new Swiper('.projectSwiper', {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -157,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resetAutoSlide();
     });
 
-    // Keyboard navigation
+
     document.addEventListener('keydown', function(e) {
         if (modal.classList.contains('hidden')) return;
         
