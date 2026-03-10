@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" type="image/png" href="/images/webicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "h1Ra7lI1Kl4jI9ZhB",
+      });
+   })();
+</script>
+
+</head>
+<body>
+    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md shadow-lg z-50 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2 text-2xl font-bold text-white">
+                    <i class="fas fa-code text-blue-500"></i>
+                    <span>Rolando-web</span>
+                </div>
+                <div class="hidden md:flex gap-8">
+                    <a href="#intro" class="nav-link text-slate-300 font-medium hover:text-blue-400">Home</a>
+                    <a href="#projects" class="nav-link text-slate-300 font-medium hover:text-blue-400">Projects</a>
+                    <a href="#certificates" class="nav-link text-slate-300 font-medium hover:text-blue-400">Certificates</a>
+                    <a href="#contact" class="nav-link text-slate-300 font-medium hover:text-blue-400">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="intro" class="pt-32 pb-20 px-6 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 space-y-6">
+                    <div class="inline-block">
+                        <span class="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold border border-blue-500/30">
+                            Available for Freelance
+                        </span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
+                        Semi Full Stack Web Developer
+                    </h1>
+                    <p class="text-xl text-slate-300 leading-relaxed">
+                        Crafting robust and scalable web applications with modern technologies.
+                        Specialized in Laravel backend development and dynamic frontend solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">Tailwind</span>
+                        <span class="tech-badge">Bootstrap</span>
+                    </div>
+                    <div class="flex gap-4 pt-6">
+                        <a href="#contact" class="btn-primary">Get In Touch</a>
+                        <a href="#projects" class="btn-secondary">View Projects</a>
+                    </div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="w-80 h-80 gradient-box rounded-3xl shadow-2xl overflow-hidden hero-image">
+                        <img src="images/profile/profile.png" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <i class="fas fa-briefcase text-blue-400 text-xl"></i>
+                    <span class="section-label">Portfolio</span>
+                </div>
+                <h2 class="text-4xl font-bold text-white mb-4">Featured Projects</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+                    A selection of my recent work showcasing expertise in full-stack development
+                </p>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper projectSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Library Management System -->
+                    <div class="swiper-slide">
+                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
+                            data-title="Library Management System"
+                            data-description="Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash."
+                            data-images='["./images/LMS/Screenshot%202025-12-17%20004730.png", "./images/LMS/Screenshot%202025-12-17%20005009.png", "./images/LMS/Screenshot%202025-12-17%20005023.png", "./images/LMS/Screenshot%202025-12-17%20005034.png", "./images/LMS/Screenshot%202025-12-17%20005046.png", "./images/LMS/Screenshot%202025-12-17%20005054.png", "./images/LMS/Screenshot%202025-12-17%20005105.png", "./images/LMS/Screenshot%202025-12-17%20005126.png", "./images/LMS/Screenshot%202025-12-17%20005231.png", "./images/LMS/Screenshot%202025-12-17%20005247.png", "./images/LMS/Screenshot%202025-12-17%20005305.png", "./images/LMS/Screenshot%202025-12-17%20005322.png", "./images/LMS/Screenshot%202025-12-17%20005356.png", "./images/LMS/Screenshot%202025-12-17%20005410.png"]'
+                            data-url="https://lms-production-kran.onrender.com/">
+                            <div class="h-48 bg-slate-700 overflow-hidden">
+                                <img src="./images/LMS/Screenshot%202025-12-17%20004730.png" alt="Library Management System" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl font-bold text-white mb-3">Library Management System</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
+                                    </div>
+                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
+                                        View Project <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: E-Commerce Platform -->
+                    <div class="swiper-slide">
+                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
+                            data-title="E-Commerce Platform"
+                            data-description="Full-featured e-commerce solution with product catalog, shopping cart, user authentication, order management, and secure payment gateway integration."
+                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Home", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Products", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Cart"]'
+                            data-url="https://example.com/ecommerce">
+                            <div class="h-48 bg-slate-700 overflow-hidden">
+                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=E-Commerce" alt="E-Commerce Platform" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl font-bold text-white mb-3">E-Commerce Platform</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    Full-featured e-commerce solution with product catalog, shopping cart, user authentication, order management, and secure payment gateway integration.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
+                                    </div>
+                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
+                                        View Project <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Content Management System -->
+                    <div class="swiper-slide">
+                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
+                            data-title="Content Management System"
+                            data-description="Custom CMS with role-based access control, allowing clients to easily manage their website content with an intuitive dashboard."
+                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Dashboard", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Editor", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Settings"]'
+                            data-url="https://example.com/cms">
+                            <div class="h-48 bg-slate-700 overflow-hidden">
+                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=CMS" alt="Content Management System" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl font-bold text-white mb-3">Content Management System</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    Custom CMS with role-based access control, allowing clients to easily manage their website content with an intuitive dashboard.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">HTML</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">CSS</span>
+                                    </div>
+                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
+                                        View Project <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Task Management App -->
+                    <div class="swiper-slide">
+                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
+                            data-title="Task Management App"
+                            data-description="A collaborative task management application with real-time updates, drag-and-drop functionality, team assignments, and progress tracking."
+                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Dashboard", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Board", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Analytics"]'
+                            data-url="https://example.com/taskapp">
+                            <div class="h-48 bg-slate-700 overflow-hidden">
+                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=Task+App" alt="Task Management App" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl font-bold text-white mb-3">Task Management App</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    A collaborative task management application with real-time updates, drag-and-drop functionality, team assignments, and progress tracking.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Vue.js</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
+                                    </div>
+                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
+                                        View Project <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Portfolio Website -->
+                    <div class="swiper-slide">
+                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
+                            data-title="Portfolio Website"
+                            data-description="A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and contact form integration."
+                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Home", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Projects", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Contact"]'
+                            data-url="https://example.com/portfolio">
+                            <div class="h-48 bg-slate-700 overflow-hidden">
+                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=Portfolio" alt="Portfolio Website" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl font-bold text-white mb-3">Portfolio Website</h3>
+                                <p class="text-slate-300 mb-4 leading-relaxed">
+                                    A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and contact form integration.
+                                </p>
+                                <div class="mt-auto">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">HTML</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">CSS</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
+                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
+                                    </div>
+                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
+                                        View Project <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-20 px-6 bg-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <i class="fas fa-award text-blue-400 text-xl"></i>
+                    <span class="section-label">Achievements</span>
+                </div>
+                <h2 class="text-4xl font-bold text-white mb-4">Certificates & Credentials</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+                    Professional certifications validating my technical expertise
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
+                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
+                        <img src="/images/cert/database.png" alt="database Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                                <i class="fas fa-award text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist Database</h3>
+                                <p class="text-slate-300">database</p>
+                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">Sep 2025</span>
+                            </div>
+                        </div>
+                        <a href="https://www.credly.com/earner/earned/badge/0d4c7c7b-64e0-4dc3-8fbf-f921608012ac" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
+                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
+                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
+                        <img src="/images/cert/java.png" alt="Java Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                                <i class="fas fa-award text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist Java</h3>
+                                <p class="text-slate-300">java</p>
+                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">March 2024</span>
+                            </div>
+                        </div>
+                        <a href="https://www.credly.com/badges/cc10cef3-585d-481c-9dea-eb6e67866f5d/linked_in_profile" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
+                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
+                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
+                        <img src="/images/cert/css.png" alt="Css Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                                <i class="fas fa-award text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-white mb-1">CSS</h3>
+                                <p class="text-slate-300">css</p>
+                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">April 2025</span>
+                            </div>
+                        </div>
+                        <a href="https://www.credly.com/badges/a18a13ea-8af7-4ed6-b855-3c5c0768a5c0/linked_in_profile" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
+                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
+                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
+                        <img src="/images/cert/html-css.png" alt="Full Stack Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                                <i class="fas fa-award text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist HTML/CSS -</h3>
+                                <p class="text-slate-300">Html</p>
+                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">Dec 2025</span>
+                            </div>
+                        </div>
+                        <a href="https://www.credly.com/badges/437d59f6-e225-4359-bdf2-27ccc59d4272" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:gap-3 transition-all mt-4 hover:text-[#2563eb]">
+                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                    <span class="section-label">Get In Touch</span>
+                </div>
+                <h2 class="text-4xl font-bold text-white mb-4">Let's Work Together</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+                    Have a project in mind? Feel free to reach out and let's create something amazing
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                            <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Email</h3>
+                            <a href="mailto:your.email@example.com" class="text-slate-300 hover:text-blue-400 transition-colors">tluayon7@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                            <i class="fas fa-phone text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Phone</h3>
+                            <a href="tel:+639702446885" class="text-slate-300 hover:text-blue-400 transition-colors">+63 970 244 6885</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
+                            <i class="fas fa-map-marker-alt text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">Location</h3>
+                            <p class="text-slate-300">Davao City, Philippines</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <h3 class="font-bold text-white mb-4">Connect With Me</h3>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-slate-200 mb-2">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="form-input p-2"
+                            placeholder="Your name"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-slate-200 mb-2">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="form-input p-2"
+                            placeholder="your.email@gmail.com"
+                        >
+                    </div>
+
+                        <div>
+                        <label for="title" class="block text-sm font-semibold text-slate-200 mb-2">Title</label>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            required
+                            class="form-input p-2"
+                            placeholder="Your project title"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-slate-200 mb-2">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="5"
+                            class="form-input p-2"
+                            placeholder="Tell me about your project..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full" onclick="submitMail()">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button id="closeModal" class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <h3 id="modalTitle" class="text-2xl font-bold text-white mb-4">Project Title</h3>
+                
+                <!-- Carousel -->
+                <div class="carousel-container">
+                    <div id="carouselImages" class="carousel-wrapper">
+                        <!-- Images will be inserted here dynamically -->
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button id="prevBtn" class="carousel-btn carousel-btn-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextBtn" class="carousel-btn carousel-btn-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Carousel Indicators -->
+                    <div id="carouselIndicators" class="carousel-indicators">
+                        <!-- Indicators will be inserted here dynamically -->
+                    </div>
+                </div>
+                
+                <p id="modalDescription" class="text-slate-300 mt-4 mb-6 leading-relaxed">Project description goes here.</p>
+                
+                <a id="visitSiteBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit Site
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-950 text-white py-8 px-6 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-400">© 2024 Rolando-web. Built with HTML, CSS & Tailwind</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
