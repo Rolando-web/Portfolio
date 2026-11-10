@@ -7,11 +7,16 @@
 > **Status:** Planning complete — awaiting build agent
 
 > **Superseding note (2026-11-10):** The original plan kept a top header and a
-> Swiper project slider. After review, the implementation replaced both: the site
-> now uses a fixed left rail (top bar + drawer on mobile), an asymmetric bento
-> projects grid, a 20px background grid, and a certificate ledger. Swiper was
-> removed from the projects section; the custom modal carousel remains. Where
-> this document still mentions Swiper, treat it as historical context.
+> Swiper project slider. The first implementation used a fixed left rail,
+> asymmetric bento grid, and certificate ledger; Swiper was removed and the
+> custom modal carousel remains. Where this document mentions Swiper or the
+> rail, treat it as historical context.
+
+> **Final direction (2026-11-10):** The rail/bento pass was itself replaced by
+> an editorial-dossier layout: fixed masthead, full-screen index overlay,
+> full-bleed alternating project plates, dark Canson spread, credential ledger,
+> and a dark contact/footer spread. The 20px grid, monochrome palette, content,
+> and behaviour constraints below still apply.
 
 ---
 

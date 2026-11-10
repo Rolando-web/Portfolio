@@ -36,7 +36,6 @@ try {
     limiter.record();
     const afterFirst = limiter.status();
 
-    // Simulate two older hits inside the window.
     const now = Date.now();
     localStorage.setItem(
       "audit:test",
@@ -50,7 +49,11 @@ try {
 
     return {
       first: first.allowed,
-      afterFirst: { allowed: afterFirst.allowed, reason: afterFirst.reason, wait: formatWait(afterFirst.retryAfterMs) },
+      afterFirst: {
+        allowed: afterFirst.allowed,
+        reason: afterFirst.reason,
+        wait: formatWait(afterFirst.retryAfterMs),
+      },
       atMax: { allowed: atMax.allowed, reason: atMax.reason, remaining: atMax.remainingInWindow },
       wait,
       cleared: cleared.allowed,
@@ -79,16 +82,16 @@ try {
     return { badButtons, badLinks, imagesWithoutAlt };
   });
 
-  // Reduced motion: modal must not auto-advance.
-  await page.emulateMediaFeatures([
-    { name: "prefers-reduced-motion", value: "reduce" },
-  ]);
+  /* Reduced motion: ticker/hero stop, carousel does not auto-advance. */
+  await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: "reduce" }]);
   await page.reload({ waitUntil: "networkidle2" });
   await new Promise((r) => setTimeout(r, 600));
   await page.evaluate(() => document.querySelectorAll(".view-project-btn")[0].click());
   await new Promise((r) => setTimeout(r, 500));
   out.reducedMotion = await page.evaluate(() => ({
-    gridAnimation: getComputedStyle(document.querySelector(".grid-layer")).animationName,
+    tickerAnimation: getComputedStyle(document.querySelector(".ticker-track")).animationName,
+    heroAnimation: getComputedStyle(document.querySelector(".hero-line > span")).animationName,
+    cursor: Boolean(document.querySelector(".cursor")),
     before: document.querySelector(".carousel-indicator.active")?.getAttribute("aria-label"),
   }));
   await new Promise((r) => setTimeout(r, 4600));
@@ -97,10 +100,8 @@ try {
   );
   await page.keyboard.press("Escape");
 
-  // Normal motion: modal should advance.
-  await page.emulateMediaFeatures([
-    { name: "prefers-reduced-motion", value: "no-preference" },
-  ]);
+  /* Normal motion: carousel advances. */
+  await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: "no-preference" }]);
   await page.reload({ waitUntil: "networkidle2" });
   await new Promise((r) => setTimeout(r, 500));
   await page.evaluate(() => document.querySelectorAll(".view-project-btn")[0].click());
@@ -116,38 +117,54 @@ try {
   );
   await page.keyboard.press("Escape");
 
-  // Mobile drawer behavior.
+  /* Index overlay behaviour on mobile. */
   await page.setViewport({ width: 390, height: 844 });
   await page.reload({ waitUntil: "networkidle2" });
   await new Promise((r) => setTimeout(r, 500));
-  await page.click("#navToggle");
-  await new Promise((r) => setTimeout(r, 350));
-  out.drawer = await page.evaluate(() => ({
-    expanded: document.getElementById("navToggle").getAttribute("aria-expanded"),
-    label: document.getElementById("navToggle").getAttribute("aria-label"),
-    open: document.getElementById("mobileDrawer").classList.contains("open"),
-    hidden: document.getElementById("mobileDrawer").hidden,
+
+  await page.click("#indexToggle");
+  await new Promise((r) => setTimeout(r, 850));
+  out.overlay = await page.evaluate(() => ({
+    expanded: document.getElementById("indexToggle").getAttribute("aria-expanded"),
+    open: document.getElementById("indexOverlay").classList.contains("is-open"),
+    hidden: document.getElementById("indexOverlay").hidden,
     bodyLocked: document.body.classList.contains("menu-open"),
-    focused: document.activeElement?.getAttribute("href"),
+    focused: document.activeElement?.id,
   }));
+
   await page.keyboard.press("Escape");
-  await new Promise((r) => setTimeout(r, 350));
-  out.drawerClosed = await page.evaluate(() => ({
-    expanded: document.getElementById("navToggle").getAttribute("aria-expanded"),
-    hidden: document.getElementById("mobileDrawer").hidden,
+  await new Promise((r) => setTimeout(r, 850));
+  out.overlayClosed = await page.evaluate(() => ({
+    expanded: document.getElementById("indexToggle").getAttribute("aria-expanded"),
+    hidden: document.getElementById("indexOverlay").hidden,
     bodyLocked: document.body.classList.contains("menu-open"),
     focus: document.activeElement?.id,
   }));
 
-  // Keyboard open + focus trap.
+  /* Overlay link navigates and closes. */
+  await page.click("#indexToggle");
+  await new Promise((r) => setTimeout(r, 800));
+  await page.click('.index-nav a[href="#certificates"]');
+  await new Promise((r) => setTimeout(r, 900));
+  out.overlayNavigation = await page.evaluate(() => ({
+    hidden: document.getElementById("indexOverlay").hidden,
+    expanded: document.getElementById("indexToggle").getAttribute("aria-expanded"),
+    hash: window.location.hash,
+    certTop: Math.round(document.getElementById("certificates").getBoundingClientRect().top),
+  }));
+
+  /* Modal keyboard open + focus trap. */
+  await page.setViewport({ width: 1440, height: 900 });
+  await page.reload({ waitUntil: "networkidle2" });
+  await new Promise((r) => setTimeout(r, 500));
   await page.evaluate(() => document.querySelector(".view-project-btn").focus());
   await page.keyboard.press("Enter");
   await new Promise((r) => setTimeout(r, 500));
   const tabbables = await page.evaluate(() => {
     const panel = document.querySelector(".modal-panel");
-    return [...panel.querySelectorAll('a[href], button:not([disabled]), input, textarea')]
-      .filter((el) => !el.hidden && el.offsetParent !== null)
-      .length;
+    return [...panel.querySelectorAll('a[href], button:not([disabled]), input, textarea')].filter(
+      (el) => !el.hidden && el.offsetParent !== null
+    ).length;
   });
   await page.keyboard.press("Escape");
   await new Promise((r) => setTimeout(r, 300));

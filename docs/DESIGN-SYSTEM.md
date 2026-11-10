@@ -1,94 +1,124 @@
-# Design System — Paper Graphite
+# Design System — Editorial Dossier
 
-A light, warm-grey monochrome system. No accent color. Project screenshots are
-the only saturated content on the page.
+A warm-paper technical monograph. The page reads like a printed architecture
+dossier: a fixed masthead, numbered sheets, full-bleed project plates, a
+credential ledger, and a dark closing spread. No accent colour — project
+screenshots are the only colour on the page.
 
 ## Tokens
 
 | Token | Value | Use |
 |---|---|---|
-| `--canvas` | `#e7e6e1` | Page background |
-| `--surface` | `#f1f0eb` | Bento cards, form, modal |
-| `--surface-2` | `#dbdad3` | Matrix tile, secondary surface |
-| `--surface-3` | `#cfcec6` | Image wells |
-| `--ink` | `#171715` | Primary text, borders, buttons |
-| `--ink-soft` | `#33332f` | Body copy |
-| `--muted` | `#5c5c55` | Labels and metadata (5:1 on canvas) |
-| `--line` | `rgba(23,23,21,0.14)` | Hairlines and grid |
-| `--line-strong` | `rgba(23,23,21,0.34)` | Card and control borders |
-| `--inverse` | `#171715` | Footer band, Canson tile |
-| `--grid` | `20px` | Background grid unit |
-| `--rail` | `236px` | Desktop navigation rail |
-| `--maxw` | `1180px` | Content width |
-| `--gutter` | `clamp(22px, 3.4vw, 54px)` | Page gutters |
-| `--ease` | `cubic-bezier(0.22,1,0.36,1)` | Global easing |
+| `--paper` | `#e9e7df` | Page background |
+| `--paper-2` | `#f2f0e8` | Inset panels, modal, credential preview |
+| `--paper-3` | `#dcd8cc` | Image wells |
+| `--ink` | `#161613` | Primary text, borders, buttons |
+| `--ink-soft` | `#2f2e29` | Body copy |
+| `--muted` | `#5d5b51` | Metadata (5.5:1 on paper) |
+| `--line` | `rgba(22,22,19,0.16)` | Hairlines and grid |
+| `--line-strong` | `rgba(22,22,19,0.4)` | Section and control borders |
+| `--inverse` | `#161613` | Canson plate, contact, footer |
+| `--inverse-ink` | `#f1efe7` | Text on ink |
+| `--inverse-muted` | `#b9b6aa` | Metadata on ink (8.9:1) |
+| `--grid` | `20px` | Background graph unit |
+| `--maxw` | `1240px` | Content width |
+| `--gutter` | `clamp(20px, 4vw, 64px)` | Page gutters |
+| `--edge` | `max(gutter, (100vw − maxw) / 2)` | Copy alignment inside full-bleed plates |
+| `--mh` | `66px` | Masthead height |
+| `--ease` | `cubic-bezier(0.19,1,0.22,1)` | Global easing |
 
 ## Type
 
 | Role | Family | Notes |
 |---|---|---|
-| Display | Bricolage Grotesque | Hero, section and tile titles, tight tracking |
-| Body | DM Sans | Copy and controls, base 17px / 1.65 |
-| Mono | IBM Plex Mono | Labels, indices, metadata, buttons |
+| Display | Anton | Hero, sheet titles, project titles, indices. Uppercase, tight, 0.8–0.92 line-height |
+| Accent | Instrument Serif italic | One word per major heading, portrait caption |
+| Body | Archivo | Copy and controls, 17px / 1.6 |
+| Labels | Archivo | 9.5–11px uppercase, 0.12–0.16em tracking |
 
-Sizes are fluid with `clamp()`. Mono labels never go below 10.5px. Rail labels
-are 15.5px DM Sans. The hero title uses outlined text for the second line via
-`-webkit-text-stroke`.
+No monospace face is used. Arrows are text glyphs (`↗ ↓ ← → ×`), not icon fonts.
+The mobile label floor is 9.5px; body copy never goes below 15px.
 
-## Grid background
+## Background
 
-Four layered linear gradients create a 20px minor grid and a 100px major grid,
-masked with a radial fade so the center is present and the edges fall away.
-Drift is a 120s background-position loop. Disabled under reduced motion.
+Two layers, both fixed and decorative:
+
+1. **Graph paper** — four linear gradients: 20px minor grid and 100px major
+   grid, 16% line alpha at 32% layer opacity. Static.
+2. **Print trim** — a 1px white frame inset 10px with `mix-blend-mode:
+   difference`, so it reads as a dark trim on paper and a light trim on the
+   dark spreads.
+
+A 2px scroll-progress bar sits at the top edge.
 
 ## Layout
 
-- **Desktop (≥901px)** — fixed 236px rail with brand, numbered nav, availability
-  status, socials, and location. Content is offset by the rail. Scroll progress
-  is a 1px vertical line on the rail edge.
-- **Mobile (≤900px)** — fixed 64px top bar with brand and menu toggle, plus a
-  full-height drawer with large nav labels. Focus is trapped inside the drawer.
-- **Hero** — eyebrow/location rule, oversized two-line title, portrait plate,
-  tag list, and a four-column stats strip.
-- **Sections** — `01` index column plus title and lede, separated by a strong
-  hairline rule.
+- **Masthead (all widths)** — three-part fixed bar: brand, sheet indicator
+  (`Sheet 02 / 04 — Credentials`), live Davao clock, and Index button. Height
+  compresses from 66px to 56px after 24px of scroll.
+- **Index overlay** — full-screen paper panel revealed with a bottom-up
+  `clip-path` wipe. Four editorial rows (number / name / italic tag / arrow),
+  staggered entrance, focus trap, `inert` background, Escape and link close.
+- **Hero** — meta rule, oversized two-line name (Anton + serif italic),
+  portrait plate, lede, actions, stack list, four-column stats strip, and a
+  full-bleed marquee ticker.
+- **Work sheets** — each project is a full-viewport-width spread:
+  `1.16fr / 0.84fr` media-and-copy. Even rows reverse to
+  `0.84fr / 1.16fr`. Copy padding resolves to `--edge`, so text aligns to the
+  1240px measure while media bleeds to the viewport. Below 900px the spread
+  stacks copy-first with a fixed media band.
+- **Canson plate** — the third row inverts to ink, with an outlined giant `03`
+  and a graph-paper media well.
+- **Capability index** — two-column numbered ledger under the work plates.
+- **Credentials** — `1.5fr / 0.7fr` ledger + sticky badge preview. Hover or
+  focus a row and the preview swaps; on mobile the badge thumbnail appears in
+  the row instead and the preview is hidden.
+- **Contact / footer** — a single dark closing spread: statement, email,
+  details, socials, and the form on the right. Footer is the colophon.
 
 ## Components
 
-- **Buttons** — square, 1px ink border, mono uppercase label, invert on hover.
-- **Tags** — 1px border, 10.5px mono uppercase.
-- **Bento projects** — 12-column asymmetric grid. LMS spans 7 columns,
-  TravelConnect 5, Canson a dark 5-column tile, and the capability matrix 7.
-  Media tiles are 16:9 (feature) or 4:3 (side) and open the project modal.
-- **Canson tile** — intentional dark typographic tile with an outlined `03`,
-  "Screenshots pending" label, and repository action.
-- **Capability matrix** — two-column ledger of eight capabilities inside the
-  bento grid.
-- **Certificate ledger** — editorial rows: index, badge thumb, title, issue
-  date, verify arrow. Not cards. Badge thumbs hide on narrow screens.
-- **Form** — underline inputs, mono labels, inline error text, `aria-live`
-  status, square submit button.
-- **Modal** — light panel, mono kicker, 54vh gallery with `contain` images,
-  indicators, description, action button. Dark blurred backdrop.
-- **Footer** — the only dark band; mono, three-column, thin inverted rule.
+- **Buttons** — square, 1px ink border, uppercase label, invert on hover.
+  Primary hero button is magnetic on fine pointers.
+- **Work plate** — the whole media area is a button that opens the project
+  modal; an "Open file ↗" chip appears on hover/focus. The copy side keeps a
+  second text trigger.
+- **Credential row** — index, title, issuer, date, arrow. Hover inverts the row
+  to ink and indents it. Rows are real links to Credly.
+- **Form** — underline inputs on ink, uppercase labels, striped error fields,
+  inline error text, `aria-live` status, full-width submit.
+- **Modal** — paper panel with a bordered header, `contain` gallery, square
+  controls, indicators, description, and action. Dark scrim; focus trapped.
+- **Cursor** — 34px difference-blend ring with a 5px dot, created only for fine
+  pointers and disabled under reduced motion.
 
 ## Motion
 
 | Effect | Duration | Trigger |
 |---|---|---|
-| Hero rise | 0.8s stagger | Load |
-| Reveal | 0.7s | IntersectionObserver |
-| Card hover | 0.25s | Pointer |
-| Image zoom | 0.6s | Media hover |
-| Gallery slide | 0.5s | Controls / 4s auto |
+| Hero line wipe | 1.1s, 0.14s stagger | Load |
+| Portrait rise | 0.9s | Load |
+| Scroll reveal | 0.8s | IntersectionObserver |
+| Ticker | 38s linear loop, pauses on hover | Always |
+| Image parallax | rAF, ±30px | Scroll |
+| Magnetic button | 0.25s follow | Fine-pointer hover |
+| Index wipe | 0.7s clip-path | Open / close |
+| Index row stagger | 0.55s, 60ms steps | Overlay open |
+| Certificate swap | 0.22s fade | Row hover / focus |
+| Gallery slide | 0.55s; 4s auto | Controls / autoplay |
 
-All of the above collapse under `prefers-reduced-motion: reduce`.
+Everything above collapses under `prefers-reduced-motion: reduce`: reveals and
+hero lines render immediately, the ticker becomes a scrollable strip, parallax,
+magnetism, and the custom cursor are disabled, and the gallery stops
+auto-advancing.
 
 ## Rules
 
-1. No accent hue. If it needs emphasis, use weight, scale, rule, or inversion.
+1. No accent hue. Emphasis comes from scale, weight, rules, and inversion.
 2. Square corners only.
 3. Borders before shadows.
-4. Mono for metadata; display for statements; body for explanation.
-5. Project screenshots keep their real color inside a neutral frame.
-6. Never trade readability for a smaller label. 10.5px is the mono floor.
+4. Anton for statements, Instrument Serif italic for one accent word, Archivo
+   for everything that must be read.
+5. Project screenshots keep their real colour inside a neutral frame.
+6. Full-bleed media, measured copy. Never let copy run wider than 64ch.
+7. Motion must clarify hierarchy, not decorate empty space.

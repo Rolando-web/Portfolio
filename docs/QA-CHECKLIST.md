@@ -52,7 +52,10 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 - [x] Images have `width`, `height`, `loading`, and `decoding`.
 - [x] Content matches `docs/CONTENT.md`.
 
-## Phase 4–8 — Redesign & motion
+## Phase 4–8 — Redesign & motion (historical)
+
+> Superseded by the dossier relayout below. Kept as a record of the earlier
+> Paper Graphite rail/bento pass.
 
 - [x] Paper Graphite tokens, fluid type, grid background.
 - [x] All sections reskinned; no Tailwind utility classes remain.
@@ -64,7 +67,7 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 - [x] Reduced motion disables grid drift, reveals, and autoplay.
 - [x] Reveal observer.
 
-## Relayout pass — 2026-11-10
+## Relayout pass — 2026-11-10 (superseded)
 
 - [x] 20px minor / 100px major grid (was 40 / 200) with 120s drift.
 - [x] Navigation relaid out: fixed 236px desktop rail, 64px mobile top bar, full-height drawer.
@@ -79,28 +82,57 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 - [x] Dead cursor-glow module removed.
 - [x] Audit and verify scripts updated for the new selectors.
 
+## Dossier relayout — 2026-11-10 (current)
+
+Replaced the rail/bento system with an editorial dossier. Project content,
+modal, carousel, form, rate limiting, and section IDs are unchanged.
+
+- [x] New tokens: warm paper / ink palette, Anton + Instrument Serif + Archivo.
+- [x] Fixed masthead with sheet indicator, live Davao clock, and Index button.
+- [x] Full-screen index overlay with clip-path wipe, row stagger, focus trap, `inert` background.
+- [x] Hero rebuilt: 200px two-line name, portrait plate, lede, stack, four-column stats, ticker.
+- [x] Projects rebuilt as full-bleed alternating spreads (`1.16fr / 0.84fr`, reversed on even rows).
+- [x] Canson inverted to a dark plate with outlined `03` and graph-paper media well.
+- [x] Capability matrix retained as a two-column numbered index.
+- [x] Credential ledger with sticky preview swap; mobile badge thumbnails.
+- [x] Contact + footer merged into a dark closing spread.
+- [x] Font Awesome removed; arrows are text glyphs.
+- [x] Static 20px / 100px graph paper, print trim, scroll progress.
+- [x] Motion: hero wipe, reveals, parallax, ticker, magnetic CTA, custom cursor, index wipe, cert swap.
+- [x] Fonts, layout, modal, and form audited at 360 / 390 / 768 / 1024 / 1440 / 1920.
+
 ## Phase 9–11 — Tests
 
 ### Layout sweep
 
 | Width | Overflow X | Broken images | Nav |
 |---|---|---|---|
-| 360 | 0 | 0 | top bar + drawer |
-| 390 | 0 | 0 | top bar + drawer |
-| 768 | 0 | 0 | top bar + drawer |
-| 1024 | 0 | 0 | left rail |
-| 1440 | 0 | 0 | left rail |
-| 1920 | 0 | 0 | left rail |
+| 360 | 0 | 0 | masthead + index overlay |
+| 390 | 0 | 0 | masthead + index overlay |
+| 768 | 0 | 0 | masthead + index overlay |
+| 1024 | 0 | 0 | masthead + index overlay |
+| 1440 | 0 | 0 | masthead + index overlay |
+| 1920 | 0 | 0 | masthead + index overlay |
 
 ### Interaction
 
-- [x] Bento shows 3 project cards + 1 matrix tile; no Swiper.
+- [x] Three full-bleed project plates; docs-only Canson plate; no Swiper.
 - [x] LMS modal: 14 slides, arrows and indicators visible, "Visit site".
 - [x] TravelConnect modal: 5 slides, arrows and indicators visible, "Visit site".
 - [x] Canson modal: empty state, controls hidden, "View repository".
 - [x] Escape closes; arrow keys navigate; focus returns to trigger.
-- [x] Drawer: `aria-expanded`, label swap, body lock, Escape close, focus restore.
+- [x] Index overlay: `aria-expanded`, body lock, Escape close, focus restore, `inert` background.
+- [x] Index overlay link closes and lands `#certificates` at 86px below the viewport top.
+- [x] Credential rows swap the sticky preview on hover/focus.
 - [x] Form: invalid submit highlights fields; honeypot short-circuits; errors described.
+
+### Contrast
+
+| Text | Ratio |
+|---|---|
+| Body / lede on paper | 10.99:1 |
+| Muted metadata on paper | 5.51:1 |
+| Metadata on ink | 8.92:1 |
 
 ### Rate limiter
 
@@ -123,7 +155,9 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 
 ## Known gaps
 
-- Visual judgment pending: review `docs/baseline/review/desktop-full.png`, `desktop-fold.png`, `desktop-modal.png`, `mobile-full.png`, and `mobile-drawer.png`.
+- Visual judgment pending: review `docs/baseline/review/desktop-fold.png`,
+  `desktop-index.png`, `desktop-projects.png`, `desktop-certificates.png`,
+  `desktop-contact.png`, `mobile-fold.png`, and `mobile-index.png`.
 - Canson screenshots pending.
 - Real EmailJS delivery not sent during automated QA (owner step 1).
 - Lighthouse not yet run; no local Chrome audit tooling installed.

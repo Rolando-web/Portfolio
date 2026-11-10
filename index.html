@@ -8,7 +8,7 @@
     <meta name="description"
         content="Portfolio of Rolando Luayon, a semi full stack web developer in Davao City building Laravel, PHP, and JavaScript applications with real payment, order, and management systems.">
     <link rel="canonical" href="https://portfolio-gold-two-93.vercel.app/">
-    <meta name="theme-color" content="#e7e6e1">
+    <meta name="theme-color" content="#e9e7df">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Rolando Luayon — Semi Full Stack Web Developer">
@@ -28,10 +28,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./src/css/main.css">
+    <noscript>
+        <style>
+            [data-reveal] {
+                opacity: 1;
+                transform: none;
+            }
+        </style>
+    </noscript>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -40,132 +47,131 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="grid-layer" aria-hidden="true"></div>
-
-    <!-- Desktop rail -->
-    <aside class="rail" aria-label="Site navigation">
-        <a class="rail-brand" href="#intro" aria-label="Rolando Luayon, back to top">
-            <span class="rail-mark" aria-hidden="true">RL</span>
-            <span class="rail-name">Rolando Luayon<span>Full stack</span></span>
-        </a>
-
-        <nav class="rail-nav" aria-label="Primary">
-            <a href="#intro"><span class="idx" aria-hidden="true">01</span><span class="label">Home</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-            <a href="#projects"><span class="idx" aria-hidden="true">02</span><span class="label">Projects</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-            <a href="#certificates"><span class="idx" aria-hidden="true">03</span><span
-                    class="label">Certificates</span><span class="mark" aria-hidden="true">↗</span></a>
-            <a href="#contact"><span class="idx" aria-hidden="true">04</span><span class="label">Contact</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-        </nav>
-
-        <div class="rail-foot">
-            <p class="availability">Available for freelance</p>
-            <div class="socials" aria-label="Social profiles">
-                <a class="social-link" href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub profile">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-                <a class="social-link" href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn profile">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <p class="rail-meta">Davao City, PH<br>tluayon7@gmail.com</p>
-        </div>
-    </aside>
-
-    <!-- Mobile top bar -->
-    <header class="top-bar">
-        <a class="top-brand" href="#intro" aria-label="Rolando Luayon, back to top">
-            <span class="top-mark" aria-hidden="true">RL</span>
-            <span class="top-name">Rolando Luayon<br>Full stack</span>
-        </a>
-        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileDrawer"
-            aria-label="Open menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
-    </header>
-
-    <!-- Mobile drawer -->
-    <div class="drawer" id="mobileDrawer" hidden>
-        <div class="drawer-top">
-            <p>Navigation</p>
-            <button class="drawer-close" id="drawerClose" type="button">Close</button>
-        </div>
-        <nav class="drawer-nav" aria-label="Mobile">
-            <a href="#intro"><span class="idx" aria-hidden="true">01</span><span class="label">Home</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-            <a href="#projects"><span class="idx" aria-hidden="true">02</span><span class="label">Projects</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-            <a href="#certificates"><span class="idx" aria-hidden="true">03</span><span
-                    class="label">Certificates</span><span class="mark" aria-hidden="true">↗</span></a>
-            <a href="#contact"><span class="idx" aria-hidden="true">04</span><span class="label">Contact</span><span
-                    class="mark" aria-hidden="true">↗</span></a>
-        </nav>
-        <div class="drawer-foot">
-            <div class="socials" aria-label="Social profiles">
-                <a class="social-link" href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub profile">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-                <a class="social-link" href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn profile">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <p class="drawer-meta">Davao City, PH<br>tluayon7@gmail.com</p>
-        </div>
-    </div>
-    <div class="nav-backdrop" id="navBackdrop" hidden></div>
-
+    <div class="page-frame" aria-hidden="true"></div>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+    <header class="masthead">
+        <a class="mast-brand" href="#intro" aria-label="Rolando Luayon, back to top">
+            <span class="brand-square" aria-hidden="true"></span>
+            <span class="brand-name">Rolando Luayon</span>
+            <span class="brand-sub">Portfolio / 2026</span>
+        </a>
+
+        <p class="mast-sheet">
+            Sheet <span data-sheet-current>00</span> / 04
+            <span data-sheet-label>Identity</span>
+        </p>
+
+        <div class="mast-actions">
+            <p class="mast-clock"><span class="clock-dot" aria-hidden="true"></span> Davao <time
+                    id="localClock">--:--</time></p>
+            <button class="index-toggle" id="indexToggle" type="button" aria-expanded="false"
+                aria-controls="indexOverlay">
+                <span>Index</span>
+                <span class="index-icon" aria-hidden="true"><span></span><span></span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="index-overlay" id="indexOverlay" role="dialog" aria-modal="true" aria-label="Site index" hidden>
+        <div class="index-top">
+            <p>Index — 04 sheets</p>
+            <button class="index-close" id="indexClose" type="button">Close <span aria-hidden="true">×</span></button>
+        </div>
+
+        <nav class="index-nav" aria-label="Primary">
+            <a href="#intro">
+                <span class="n">00</span>
+                <span class="name">Identity</span>
+                <span class="tag">Who, where, what</span>
+                <span class="go" aria-hidden="true">↗</span>
+            </a>
+            <a href="#projects">
+                <span class="n">01</span>
+                <span class="name">Selected work</span>
+                <span class="tag">Three systems, end to end</span>
+                <span class="go" aria-hidden="true">↗</span>
+            </a>
+            <a href="#certificates">
+                <span class="n">02</span>
+                <span class="name">Credentials</span>
+                <span class="tag">Verified through Credly</span>
+                <span class="go" aria-hidden="true">↗</span>
+            </a>
+            <a href="#contact">
+                <span class="n">03</span>
+                <span class="name">Contact</span>
+                <span class="tag">Start a project</span>
+                <span class="go" aria-hidden="true">↗</span>
+            </a>
+        </nav>
+
+        <div class="index-foot">
+            <div>
+                <p>Email</p>
+                <a href="mailto:tluayon7@gmail.com">tluayon7@gmail.com</a>
+            </div>
+            <div>
+                <p>Elsewhere</p>
+                <a href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+            <p>Davao City, PH — <time data-clock>--:--</time></p>
+        </div>
+    </div>
+
     <main id="main">
-        <section id="intro" class="hero">
-            <div class="shell">
-                <div class="hero-top">
-                    <p class="eyebrow">Available for freelance</p>
-                    <p class="hero-location">Davao City, PH · Full stack</p>
+        <section id="intro" class="hero" data-sheet="00" data-label="Identity">
+            <div class="hero-shell">
+                <div class="hero-meta">
+                    <span>Portfolio — 2026</span>
+                    <span>Semi full stack web developer</span>
+                    <span>Davao City, PH</span>
                 </div>
 
                 <div class="hero-main">
-                    <div class="hero-copy">
+                    <div class="hero-name">
+                        <p class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span> Available for
+                            freelance</p>
                         <h1>
-                            <span class="line">Semi full stack</span>
-                            <span class="line"><em>web developer</em></span>
+                            <span class="hero-line"><span>Rolando</span></span>
+                            <span class="hero-line hero-line--serif"><span>Luayon</span></span>
                         </h1>
-                        <p class="hero-intro">
-                            Crafting robust and scalable web applications with modern technologies.
-                            Specialized in Laravel backend development and dynamic frontend solutions.
-                        </p>
-                        <div class="hero-actions">
-                            <a href="#contact" class="btn">Get in touch <i class="fas fa-arrow-right arrow"
-                                    aria-hidden="true"></i></a>
-                            <a href="#projects" class="btn btn--ghost">View projects <i class="fas fa-arrow-down arrow"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                        <ul class="hero-tags" aria-label="Core technologies">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>PHP</li>
-                            <li>Laravel</li>
-                            <li>MySQL</li>
-                            <li>Tailwind</li>
-                            <li>Bootstrap</li>
-                        </ul>
                     </div>
 
-                    <figure class="portrait">
-                        <img src="./assets/images/profile/profile.png" alt="Portrait of Rolando Luayon" width="448"
-                            height="445" fetchpriority="high">
-                        <figcaption>
-                            <span>Rolando Luayon</span>
-                            <span>Est. 2024</span>
-                        </figcaption>
+                    <figure class="hero-portrait">
+                        <div class="hero-portrait-frame">
+                            <img src="./assets/images/profile/profile.png" alt="Portrait of Rolando Luayon"
+                                width="448" height="445" fetchpriority="high">
+                        </div>
+                        <figcaption><span>ID — 001</span><span>Est. 2024</span></figcaption>
                     </figure>
+                </div>
+
+                <div class="hero-body">
+                    <p class="hero-lede" data-reveal="fade">
+                        Crafting robust and scalable web applications with modern technologies.
+                        Specialized in Laravel backend development and dynamic frontend solutions.
+                    </p>
+                    <div class="hero-actions" data-reveal="fade" data-delay="1">
+                        <a href="#contact" class="btn" data-magnetic>Get in touch <span aria-hidden="true">↗</span></a>
+                        <a href="#projects" class="link-arrow">View projects <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+
+                <div class="hero-stack" data-reveal="fade" data-delay="1">
+                    <span class="stack-label">Core stack</span>
+                    <ul aria-label="Core technologies">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>Laravel</li>
+                        <li>MySQL</li>
+                        <li>Tailwind</li>
+                        <li>Bootstrap</li>
+                    </ul>
                 </div>
 
                 <dl class="hero-stats">
@@ -187,385 +193,405 @@
                     </div>
                 </dl>
             </div>
+
+            <div class="ticker" aria-hidden="true">
+                <div class="ticker-track">
+                    <div class="ticker-group">
+                        <span>Laravel</span><span class="sym">✳</span>
+                        <span>PHP</span><span class="sym">✳</span>
+                        <span>MySQL</span><span class="sym">✳</span>
+                        <span>JavaScript</span><span class="sym">✳</span>
+                        <span>React</span><span class="sym">✳</span>
+                        <span>ASP.NET</span><span class="sym">✳</span>
+                        <span>Tailwind</span><span class="sym">✳</span>
+                        <span>Pest</span><span class="sym">✳</span>
+                    </div>
+                    <div class="ticker-group">
+                        <span>Laravel</span><span class="sym">✳</span>
+                        <span>PHP</span><span class="sym">✳</span>
+                        <span>MySQL</span><span class="sym">✳</span>
+                        <span>JavaScript</span><span class="sym">✳</span>
+                        <span>React</span><span class="sym">✳</span>
+                        <span>ASP.NET</span><span class="sym">✳</span>
+                        <span>Tailwind</span><span class="sym">✳</span>
+                        <span>Pest</span><span class="sym">✳</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projects" class="sheet sheet--work" data-sheet="01" data-label="Selected work">
             <div class="shell">
-                <div class="section-head" data-reveal>
-                    <p class="section-index">01 / Selected work</p>
+                <header class="sheet-head" data-reveal="fade">
+                    <div class="sheet-meta">
+                        <span>Sheet 01</span>
+                        <span>Selected work</span>
+                        <span>2024 — 2026</span>
+                    </div>
                     <div>
-                        <h2 class="section-title">Projects built end to end.</h2>
-                        <p class="section-lede">
+                        <h2 class="sheet-title">Selected <em>work</em></h2>
+                        <p class="sheet-lede">
                             A selection of my recent work showcasing expertise in full-stack development.
                             Each project covers the data model, the interface, and the deployment.
                         </p>
                     </div>
-                </div>
+                </header>
+            </div>
 
-                <div class="bento">
-                    <!-- 01 — LMS -->
-                    <article class="project-card bento-card bento--feature" data-reveal data-title="Library Management System"
-                        data-description="Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash."
-                        data-images='["./assets/images/projects/lms/01.png", "./assets/images/projects/lms/02.png", "./assets/images/projects/lms/03.png", "./assets/images/projects/lms/04.png", "./assets/images/projects/lms/05.png", "./assets/images/projects/lms/06.png", "./assets/images/projects/lms/07.png", "./assets/images/projects/lms/08.png", "./assets/images/projects/lms/09.png", "./assets/images/projects/lms/10.png", "./assets/images/projects/lms/11.png", "./assets/images/projects/lms/12.png", "./assets/images/projects/lms/13.png", "./assets/images/projects/lms/14.png"]'
-                        data-url="https://lms-production-kran.onrender.com/">
-                        <div class="bento-head">
-                            <span>01 — Featured</span>
-                            <span>Laravel · PHP</span>
+            <div class="work-list">
+                <article class="work-row project-card" data-reveal
+                    data-title="Library Management System"
+                    data-description="Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash."
+                    data-images='["./assets/images/projects/lms/01.png", "./assets/images/projects/lms/02.png", "./assets/images/projects/lms/03.png", "./assets/images/projects/lms/04.png", "./assets/images/projects/lms/05.png", "./assets/images/projects/lms/06.png", "./assets/images/projects/lms/07.png", "./assets/images/projects/lms/08.png", "./assets/images/projects/lms/09.png", "./assets/images/projects/lms/10.png", "./assets/images/projects/lms/11.png", "./assets/images/projects/lms/12.png", "./assets/images/projects/lms/13.png", "./assets/images/projects/lms/14.png"]'
+                    data-url="https://lms-production-kran.onrender.com/">
+                    <button class="work-media view-project-btn" type="button"
+                        aria-label="View Library Management System project">
+                        <img src="./assets/images/projects/lms/01.png" alt="Library Management System dashboard"
+                            width="1902" height="756" loading="lazy" decoding="async">
+                        <span class="work-open">Open file <span aria-hidden="true">↗</span></span>
+                    </button>
+
+                    <div class="work-copy">
+                        <div class="work-copy-top">
+                            <p class="work-kicker">Library system / Laravel</p>
+                            <span class="work-num" aria-hidden="true">01</span>
+                            <h3 class="work-title">Library Management System</h3>
+                            <p class="work-desc">
+                                Full‑featured LMS built with Laravel, role‑based access (User, Admin,
+                                Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation
+                                fees, PayMongo payment integration for PayPal and GCash.
+                            </p>
                         </div>
-                        <button class="bento-media view-project-btn" type="button"
-                            aria-label="View Library Management System project">
-                            <img src="./assets/images/projects/lms/01.png" alt="Library Management System dashboard"
-                                width="1902" height="756" loading="lazy" decoding="async">
-                            <span class="cta" aria-hidden="true">Open file ↗</span>
-                        </button>
-                        <h3 class="bento-title">Library Management System</h3>
-                        <p class="bento-copy">
-                            Full‑featured LMS built with Laravel, role‑based access (User, Admin,
-                            Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation
-                            fees, PayMongo payment integration for PayPal and GCash.
-                        </p>
-                        <div class="bento-foot">
-                            <div class="tags" aria-label="Technology stack">
-                                <span class="tag">Laravel</span>
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Tailwind</span>
-                            </div>
-                            <button class="project-link view-project-btn" type="button"
+                        <div class="work-copy-foot">
+                            <ul class="work-tags" aria-label="Technology stack">
+                                <li>Laravel</li>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                                <li>JavaScript</li>
+                                <li>Tailwind</li>
+                            </ul>
+                            <button class="work-link view-project-btn" type="button"
                                 aria-label="View Library Management System project">
-                                View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                View project <span aria-hidden="true">↗</span>
                             </button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <!-- 02 — TravelConnect -->
-                    <article class="project-card bento-card bento--side" data-reveal data-delay="1" data-title="TravelConnect"
-                        data-description="Full-stack online travel agency covering flights, hotels, cars, and packages, with PayMongo payments and 3-D Secure card checkout, cancellations and refunds, PDF itineraries, customer support, and a role-based admin dashboard."
-                        data-images='["./assets/images/projects/travelconnect/01-home.png", "./assets/images/projects/travelconnect/02-flights.png", "./assets/images/projects/travelconnect/03-hotels.png", "./assets/images/projects/travelconnect/04-deals.png", "./assets/images/projects/travelconnect/05-admin-dashboard.png"]'
-                        data-url="https://travel-connect-xi.vercel.app/">
-                        <div class="bento-head">
-                            <span>02 — Live</span>
-                            <span>React · .NET</span>
+                <article class="work-row project-card" data-reveal
+                    data-title="TravelConnect"
+                    data-description="Full-stack online travel agency covering flights, hotels, cars, and packages, with PayMongo payments and 3-D Secure card checkout, cancellations and refunds, PDF itineraries, customer support, and a role-based admin dashboard."
+                    data-images='["./assets/images/projects/travelconnect/01-home.png", "./assets/images/projects/travelconnect/02-flights.png", "./assets/images/projects/travelconnect/03-hotels.png", "./assets/images/projects/travelconnect/04-deals.png", "./assets/images/projects/travelconnect/05-admin-dashboard.png"]'
+                    data-url="https://travel-connect-xi.vercel.app/">
+                    <button class="work-media view-project-btn" type="button"
+                        aria-label="View TravelConnect project">
+                        <img src="./assets/images/projects/travelconnect/01-home.png"
+                            alt="TravelConnect booking homepage" width="1440" height="900" loading="lazy"
+                            decoding="async">
+                        <span class="work-open">Open file <span aria-hidden="true">↗</span></span>
+                    </button>
+
+                    <div class="work-copy">
+                        <div class="work-copy-top">
+                            <p class="work-kicker">Travel platform / React</p>
+                            <span class="work-num" aria-hidden="true">02</span>
+                            <h3 class="work-title">TravelConnect</h3>
+                            <p class="work-desc">
+                                Online travel agency for flights, hotels, cars, and packages. PayMongo payments
+                                with 3-D Secure checkout, cancellations and refunds, PDF itineraries, customer
+                                support, and a role-based admin dashboard.
+                            </p>
                         </div>
-                        <button class="bento-media view-project-btn" type="button"
-                            aria-label="View TravelConnect project">
-                            <img src="./assets/images/projects/travelconnect/01-home.png"
-                                alt="TravelConnect booking homepage" width="1440" height="900" loading="lazy"
-                                decoding="async">
-                            <span class="cta" aria-hidden="true">Open file ↗</span>
-                        </button>
-                        <h3 class="bento-title">TravelConnect</h3>
-                        <p class="bento-copy">
-                            Online travel agency for flights, hotels, cars, and packages. PayMongo payments
-                            with 3-D Secure checkout, cancellations and refunds, PDF itineraries, customer
-                            support, and a role-based admin dashboard.
-                        </p>
-                        <div class="bento-foot">
-                            <div class="tags" aria-label="Technology stack">
-                                <span class="tag">React 19</span>
-                                <span class="tag">Vite</span>
-                                <span class="tag">Tailwind</span>
-                                <span class="tag">ASP.NET Core</span>
-                                <span class="tag">SQL Server</span>
-                                <span class="tag">PayMongo</span>
-                            </div>
-                            <button class="project-link view-project-btn" type="button"
+                        <div class="work-copy-foot">
+                            <ul class="work-tags" aria-label="Technology stack">
+                                <li>React 19</li>
+                                <li>Vite</li>
+                                <li>Tailwind</li>
+                                <li>ASP.NET Core</li>
+                                <li>SQL Server</li>
+                                <li>PayMongo</li>
+                            </ul>
+                            <button class="work-link view-project-btn" type="button"
                                 aria-label="View TravelConnect project">
-                                View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                View project <span aria-hidden="true">↗</span>
                             </button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <!-- 03 — Canson (dark tile) -->
-                    <article class="project-card bento-card bento--dark" data-reveal
-                        data-title="Canson Order &amp; Workforce System"
-                        data-description="Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics."
-                        data-images='[]'
-                        data-url="https://github.com/Rolando-web/Canson-s-Order-Tracking-and-Workforce-Tasking-System"
-                        data-url-label="View repository">
-                        <div class="bento-head">
-                            <span>03 — Repository</span>
-                            <span>Laravel 12</span>
+                <article class="work-row work-row--dark project-card" data-reveal
+                    data-title="Canson Order &amp; Workforce System"
+                    data-description="Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics."
+                    data-images='[]'
+                    data-url="https://github.com/Rolando-web/Canson-s-Order-Tracking-and-Workforce-Tasking-System"
+                    data-url-label="View repository">
+                    <button class="work-media work-media--pending view-project-btn" type="button"
+                        aria-label="View Canson Order and Workforce System project">
+                        <span class="pending-big" aria-hidden="true">03</span>
+                        <span class="pending-label">
+                            <span>Screenshots pending</span>
+                            <span aria-hidden="true">Repository ↗</span>
+                        </span>
+                    </button>
+
+                    <div class="work-copy">
+                        <div class="work-copy-top">
+                            <p class="work-kicker">Order &amp; workforce / Laravel</p>
+                            <span class="work-num" aria-hidden="true">03</span>
+                            <h3 class="work-title">Canson Order &amp; Workforce System</h3>
+                            <p class="work-desc">
+                                Order, inventory, and workforce platform for a supplies business. Role-based
+                                access, multi-phase orders, employee assignments, production progress, damage
+                                and return tracking, stock audit trails, scheduling, and analytics.
+                            </p>
                         </div>
-                        <button class="bento-pending view-project-btn" type="button"
-                            aria-label="View Canson Order and Workforce System project">
-                            <span class="big" aria-hidden="true">03</span>
-                            <span class="label">
-                                <span>Screenshots pending</span>
-                                <span aria-hidden="true">↗</span>
-                            </span>
-                        </button>
-                        <h3 class="bento-title">Canson Order &amp; Workforce System</h3>
-                        <p class="bento-copy">
-                            Order, inventory, and workforce platform for a supplies business. Role-based
-                            access, multi-phase orders, employee assignments, production progress, damage
-                            and return tracking, stock audit trails, scheduling, and analytics.
-                        </p>
-                        <div class="bento-foot">
-                            <div class="tags" aria-label="Technology stack">
-                                <span class="tag">Laravel 12</span>
-                                <span class="tag">PHP 8.2</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">Blade</span>
-                                <span class="tag">Tailwind</span>
-                                <span class="tag">Pest</span>
-                            </div>
-                            <button class="project-link view-project-btn" type="button"
+                        <div class="work-copy-foot">
+                            <ul class="work-tags" aria-label="Technology stack">
+                                <li>Laravel 12</li>
+                                <li>PHP 8.2</li>
+                                <li>MySQL</li>
+                                <li>Blade</li>
+                                <li>Tailwind</li>
+                                <li>Pest</li>
+                            </ul>
+                            <button class="work-link view-project-btn" type="button"
                                 aria-label="View Canson Order and Workforce System project">
-                                View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                View project <span aria-hidden="true">↗</span>
                             </button>
                         </div>
-                    </article>
+                    </div>
+                </article>
+            </div>
 
-                    <!-- Capability matrix -->
-                    <article class="bento-card bento--matrix" data-reveal data-delay="1">
-                        <div class="bento-head">
-                            <span>Capability matrix</span>
-                            <span>2024 — 2026</span>
+            <div class="shell">
+                <div class="capability" data-reveal="fade">
+                    <div class="capability-head">
+                        <span>Capability index</span>
+                        <span>08 entries</span>
+                    </div>
+                    <div class="capability-grid">
+                        <div class="cap-row">
+                            <span class="n">01</span>
+                            <span class="k">Authentication &amp; roles</span>
+                            <span class="v">Laravel</span>
                         </div>
-                        <h3 class="bento-title">What I build, end to end.</h3>
-                        <div class="matrix">
-                            <div class="matrix-row">
-                                <span class="n">01</span>
-                                <span class="k">Authentication &amp; roles</span>
-                                <span class="v">Laravel</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">02</span>
-                                <span class="k">Relational data models</span>
-                                <span class="v">MySQL</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">03</span>
-                                <span class="k">REST APIs</span>
-                                <span class="v">ASP.NET</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">04</span>
-                                <span class="k">Payment checkout</span>
-                                <span class="v">PayMongo</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">05</span>
-                                <span class="k">Responsive interfaces</span>
-                                <span class="v">CSS</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">06</span>
-                                <span class="k">PDF &amp; reporting</span>
-                                <span class="v">Blade</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">07</span>
-                                <span class="k">Automated tests</span>
-                                <span class="v">Pest</span>
-                            </div>
-                            <div class="matrix-row">
-                                <span class="n">08</span>
-                                <span class="k">Deployment &amp; hosting</span>
-                                <span class="v">Vercel</span>
-                            </div>
+                        <div class="cap-row">
+                            <span class="n">02</span>
+                            <span class="k">Relational data models</span>
+                            <span class="v">MySQL</span>
                         </div>
-                    </article>
+                        <div class="cap-row">
+                            <span class="n">03</span>
+                            <span class="k">REST APIs</span>
+                            <span class="v">ASP.NET</span>
+                        </div>
+                        <div class="cap-row">
+                            <span class="n">04</span>
+                            <span class="k">Payment checkout</span>
+                            <span class="v">PayMongo</span>
+                        </div>
+                        <div class="cap-row">
+                            <span class="n">05</span>
+                            <span class="k">Responsive interfaces</span>
+                            <span class="v">CSS</span>
+                        </div>
+                        <div class="cap-row">
+                            <span class="n">06</span>
+                            <span class="k">PDF &amp; reporting</span>
+                            <span class="v">Blade</span>
+                        </div>
+                        <div class="cap-row">
+                            <span class="n">07</span>
+                            <span class="k">Automated tests</span>
+                            <span class="v">Pest</span>
+                        </div>
+                        <div class="cap-row">
+                            <span class="n">08</span>
+                            <span class="k">Deployment &amp; hosting</span>
+                            <span class="v">Vercel</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="certificates" class="section">
+        <section id="certificates" class="sheet sheet--certs" data-sheet="02" data-label="Credentials">
             <div class="shell">
-                <div class="section-head" data-reveal>
-                    <p class="section-index">02 / Credentials</p>
+                <header class="sheet-head" data-reveal="fade">
+                    <div class="sheet-meta">
+                        <span>Sheet 02</span>
+                        <span>Credentials</span>
+                        <span>04 verified</span>
+                    </div>
                     <div>
-                        <h2 class="section-title">Certificates &amp; credentials.</h2>
-                        <p class="section-lede">
+                        <h2 class="sheet-title">Paper <em>proof</em></h2>
+                        <p class="sheet-lede">
                             Professional certifications validating my technical expertise,
-                            each verifiable through Credly.
+                            each verifiable through Credly. Hover a row to see the badge.
                         </p>
                     </div>
-                </div>
+                </header>
 
-                <div class="ledger">
-                    <div class="ledger-head" aria-hidden="true">
-                        <span>No.</span>
-                        <span>Badge</span>
-                        <span>Credential</span>
-                        <span>Issued</span>
-                        <span>Verify</span>
+                <div class="cred-grid">
+                    <div class="cred-list" id="credList">
+                        <a class="cred-row" href="https://www.credly.com/earner/earned/badge/0d4c7c7b-64e0-4dc3-8fbf-f921608012ac"
+                            data-badge="./assets/images/certificates/database.png" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="cred-num">01</span>
+                            <span class="cred-main">
+                                <span class="cred-title">IT Specialist Database</span>
+                                <span class="cred-sub">Credly badge</span>
+                            </span>
+                            <img class="cred-thumb" src="./assets/images/certificates/database.png"
+                                alt="" width="392" height="369" loading="lazy" decoding="async">
+                            <span class="cred-date">Sep 2025</span>
+                            <span class="cred-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="cred-row" href="https://www.credly.com/badges/cc10cef3-585d-481c-9dea-eb6e67866f5d/linked_in_profile"
+                            data-badge="./assets/images/certificates/java.png" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="cred-num">02</span>
+                            <span class="cred-main">
+                                <span class="cred-title">IT Specialist Java</span>
+                                <span class="cred-sub">Credly badge</span>
+                            </span>
+                            <img class="cred-thumb" src="./assets/images/certificates/java.png" alt="" width="360"
+                                height="358" loading="lazy" decoding="async">
+                            <span class="cred-date">March 2024</span>
+                            <span class="cred-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="cred-row" href="https://www.credly.com/badges/a18a13ea-8af7-4ed6-b855-3c5c0768a5c0/linked_in_profile"
+                            data-badge="./assets/images/certificates/css.png" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="cred-num">03</span>
+                            <span class="cred-main">
+                                <span class="cred-title">CSS</span>
+                                <span class="cred-sub">Credly badge</span>
+                            </span>
+                            <img class="cred-thumb" src="./assets/images/certificates/css.png" alt="" width="324"
+                                height="323" loading="lazy" decoding="async">
+                            <span class="cred-date">April 2025</span>
+                            <span class="cred-arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                        <a class="cred-row" href="https://www.credly.com/badges/437d59f6-e225-4359-bdf2-27ccc59d4272"
+                            data-badge="./assets/images/certificates/html-css.png" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="cred-num">04</span>
+                            <span class="cred-main">
+                                <span class="cred-title">IT Specialist HTML/CSS -</span>
+                                <span class="cred-sub">Credly badge</span>
+                            </span>
+                            <img class="cred-thumb" src="./assets/images/certificates/html-css.png" alt="" width="354"
+                                height="356" loading="lazy" decoding="async">
+                            <span class="cred-date">Dec 2025</span>
+                            <span class="cred-arrow" aria-hidden="true">↗</span>
+                        </a>
                     </div>
 
-                    <article class="ledger-row" data-reveal>
-                        <span class="ledger-index">01</span>
-                        <img class="ledger-thumb" src="./assets/images/certificates/database.png"
-                            alt="IT Specialist Database badge" width="392" height="369" loading="lazy"
-                            decoding="async">
-                        <div>
-                            <h3 class="ledger-title">IT Specialist Database</h3>
-                            <p class="ledger-sub">Credly badge</p>
-                        </div>
-                        <p class="ledger-date">Sep 2025</p>
-                        <a class="ledger-link"
-                            href="https://www.credly.com/earner/earned/badge/0d4c7c7b-64e0-4dc3-8fbf-f921608012ac"
-                            target="_blank" rel="noopener noreferrer"
-                            aria-label="Verify IT Specialist Database credential on Credly">
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </article>
-
-                    <article class="ledger-row" data-reveal data-delay="1">
-                        <span class="ledger-index">02</span>
-                        <img class="ledger-thumb" src="./assets/images/certificates/java.png"
-                            alt="IT Specialist Java badge" width="360" height="358" loading="lazy" decoding="async">
-                        <div>
-                            <h3 class="ledger-title">IT Specialist Java</h3>
-                            <p class="ledger-sub">Credly badge</p>
-                        </div>
-                        <p class="ledger-date">March 2024</p>
-                        <a class="ledger-link"
-                            href="https://www.credly.com/badges/cc10cef3-585d-481c-9dea-eb6e67866f5d/linked_in_profile"
-                            target="_blank" rel="noopener noreferrer"
-                            aria-label="Verify IT Specialist Java credential on Credly">
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </article>
-
-                    <article class="ledger-row" data-reveal>
-                        <span class="ledger-index">03</span>
-                        <img class="ledger-thumb" src="./assets/images/certificates/css.png" alt="CSS badge"
-                            width="324" height="323" loading="lazy" decoding="async">
-                        <div>
-                            <h3 class="ledger-title">CSS</h3>
-                            <p class="ledger-sub">Credly badge</p>
-                        </div>
-                        <p class="ledger-date">April 2025</p>
-                        <a class="ledger-link"
-                            href="https://www.credly.com/badges/a18a13ea-8af7-4ed6-b855-3c5c0768a5c0/linked_in_profile"
-                            target="_blank" rel="noopener noreferrer"
-                            aria-label="Verify CSS credential on Credly">
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </article>
-
-                    <article class="ledger-row" data-reveal data-delay="1">
-                        <span class="ledger-index">04</span>
-                        <img class="ledger-thumb" src="./assets/images/certificates/html-css.png"
-                            alt="IT Specialist HTML and CSS badge" width="354" height="356" loading="lazy"
-                            decoding="async">
-                        <div>
-                            <h3 class="ledger-title">IT Specialist HTML/CSS -</h3>
-                            <p class="ledger-sub">Credly badge</p>
-                        </div>
-                        <p class="ledger-date">Dec 2025</p>
-                        <a class="ledger-link"
-                            href="https://www.credly.com/badges/437d59f6-e225-4359-bdf2-27ccc59d4272" target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Verify IT Specialist HTML and CSS credential on Credly">
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </article>
+                    <aside class="cred-preview" aria-hidden="true">
+                        <img id="credPreviewImage" src="./assets/images/certificates/database.png" alt="" width="392"
+                            height="369" decoding="async">
+                        <p class="cred-preview-caption">
+                            <span>Credly verified</span>
+                            <span>Hover / focus a row</span>
+                        </p>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <div class="shell">
-                <div class="section-head" data-reveal>
-                    <p class="section-index">03 / Contact</p>
-                    <div>
-                        <h2 class="section-title">Let's work together.</h2>
-                        <p class="section-lede">
-                            Have a project in mind? Feel free to reach out and let's create something amazing.
-                        </p>
+        <section id="contact" class="sheet sheet--contact" data-sheet="03" data-label="Contact">
+            <div class="shell contact-grid">
+                <div class="contact-left">
+                    <div class="contact-kicker">
+                        <span>Sheet 03 — Contact</span>
+                        <span>Open for work</span>
+                    </div>
+
+                    <h2 class="contact-title">Let's make<br><em>something</em><br>useful.</h2>
+                    <p class="contact-copy">
+                        Have a project in mind? Feel free to reach out and let's create something amazing.
+                        I usually reply within two business days.
+                    </p>
+
+                    <a class="contact-email" href="mailto:tluayon7@gmail.com">tluayon7@gmail.com <span
+                            aria-hidden="true">↗</span></a>
+
+                    <dl class="contact-details">
+                        <div>
+                            <dt>Phone</dt>
+                            <dd><a href="tel:+639702446885">+63 970 244 6885</a></dd>
+                        </div>
+                        <div>
+                            <dt>Location</dt>
+                            <dd>Davao City, Philippines</dd>
+                        </div>
+                    </dl>
+
+                    <div class="contact-socials" aria-label="Social profiles">
+                        <a href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn ↗</a>
                     </div>
                 </div>
 
-                <div class="contact-grid">
-                    <div data-reveal>
-                        <h3 class="contact-heading">Tell me what you are building.</h3>
-                        <p class="contact-copy">
-                            I usually reply within two business days. For urgent work,
-                            call or message the number below.
-                        </p>
-
-                        <dl class="contact-list">
-                            <div>
-                                <dt>Email</dt>
-                                <dd><a href="mailto:tluayon7@gmail.com">tluayon7@gmail.com</a></dd>
-                            </div>
-                            <div>
-                                <dt>Phone</dt>
-                                <dd><a href="tel:+639702446885">+63 970 244 6885</a></dd>
-                            </div>
-                            <div>
-                                <dt>Location</dt>
-                                <dd>Davao City, Philippines</dd>
-                            </div>
-                        </dl>
-
-                        <div class="socials" aria-label="Social profiles">
-                            <a class="social-link" href="https://github.com/Rolando-web" target="_blank"
-                                rel="noopener noreferrer" aria-label="GitHub profile">
-                                <i class="fab fa-github" aria-hidden="true"></i>
-                            </a>
-                            <a class="social-link" href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/"
-                                target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                                <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                <form class="contact-form" id="contactForm" novalidate data-reveal="fade" data-delay="1">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required maxlength="80" autocomplete="name"
+                            placeholder="Your name" aria-describedby="name-error">
+                        <p class="field-error" id="name-error" data-error-for="name" hidden></p>
                     </div>
 
-                    <form class="contact-form" id="contactForm" novalidate data-reveal data-delay="1">
-                        <div class="field">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required maxlength="80" autocomplete="name"
-                                placeholder="Your name" aria-describedby="name-error">
-                            <p class="field-error" id="name-error" data-error-for="name" hidden></p>
-                        </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required maxlength="120" autocomplete="email"
+                            placeholder="your.email@gmail.com" aria-describedby="email-error">
+                        <p class="field-error" id="email-error" data-error-for="email" hidden></p>
+                    </div>
 
-                        <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required maxlength="120" autocomplete="email"
-                                placeholder="your.email@gmail.com" aria-describedby="email-error">
-                            <p class="field-error" id="email-error" data-error-for="email" hidden></p>
-                        </div>
+                    <div class="field">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required maxlength="120"
+                            placeholder="Your project title" aria-describedby="title-error">
+                        <p class="field-error" id="title-error" data-error-for="title" hidden></p>
+                    </div>
 
-                        <div class="field">
-                            <label for="title">Title</label>
-                            <input type="text" id="title" name="title" required maxlength="120"
-                                placeholder="Your project title" aria-describedby="title-error">
-                            <p class="field-error" id="title-error" data-error-for="title" hidden></p>
-                        </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required rows="5" maxlength="2000"
+                            placeholder="Tell me about your project..." aria-describedby="message-error"></textarea>
+                        <p class="field-error" id="message-error" data-error-for="message" hidden></p>
+                    </div>
 
-                        <div class="field">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required rows="5" maxlength="2000"
-                                placeholder="Tell me about your project..." aria-describedby="message-error"></textarea>
-                            <p class="field-error" id="message-error" data-error-for="message" hidden></p>
-                        </div>
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                    </div>
 
-                        <div class="hp-field" aria-hidden="true">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-                        </div>
+                    <button type="submit" class="btn">
+                        <span data-label>Send message</span>
+                        <span aria-hidden="true">↗</span>
+                    </button>
 
-                        <button type="submit" class="btn btn--block">
-                            <span data-label>Send message</span>
-                            <i class="fas fa-arrow-right arrow" aria-hidden="true"></i>
-                        </button>
-
-                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-                        <p class="form-note">One message per minute · max three per ten minutes.</p>
-                    </form>
-                </div>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    <p class="form-note">One message per minute · max three per ten minutes.</p>
+                </form>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="shell footer-grid">
-            <p>© 2024 Rolando-web</p>
-            <p>Built with HTML, CSS &amp; JavaScript</p>
-            <p><a href="mailto:tluayon7@gmail.com">tluayon7@gmail.com</a></p>
+            <p class="footer-mark">RL</p>
+            <div class="footer-meta">
+                <p>© 2024 Rolando-web</p>
+                <p>Built with HTML, CSS &amp; JavaScript</p>
+                <a href="#intro">Back to top ↑</a>
+            </div>
         </div>
     </footer>
 
@@ -577,17 +603,17 @@
                     <h3 id="modalTitle" class="modal-title">Project Title</h3>
                 </div>
                 <button id="closeModal" class="modal-close" type="button" aria-label="Close project details">
-                    <i class="fas fa-times" aria-hidden="true"></i>
+                    <span aria-hidden="true">×</span>
                 </button>
             </div>
 
             <div class="modal-gallery" id="modalGallery">
                 <div id="carouselImages" class="carousel"></div>
                 <button id="prevBtn" class="gallery-btn gallery-prev" type="button" aria-label="Previous screenshot">
-                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    <span aria-hidden="true">←</span>
                 </button>
                 <button id="nextBtn" class="gallery-btn gallery-next" type="button" aria-label="Next screenshot">
-                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    <span aria-hidden="true">→</span>
                 </button>
                 <div id="carouselIndicators" class="carousel-indicators"></div>
             </div>
@@ -596,7 +622,7 @@
                 <p id="modalDescription" class="modal-copy">Project description goes here.</p>
                 <a id="visitSiteBtn" class="btn" href="#" target="_blank" rel="noopener noreferrer">
                     <span data-label>Visit site</span>
-                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span aria-hidden="true">↗</span>
                 </a>
             </div>
         </div>

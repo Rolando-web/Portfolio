@@ -6,17 +6,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--canvas);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -54,7 +55,8 @@ h4,
 p,
 dl,
 dd,
-figure {
+figure,
+blockquote {
   margin: 0;
 }
 
@@ -81,6 +83,15 @@ main,
   z-index: 1;
 }
 
+.shell {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--mh) + 20px);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -95,17 +106,17 @@ main,
 
 .skip-link {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   z-index: 200;
   padding: 10px 16px;
   background: var(--ink);
   color: var(--inverse-ink);
-  font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  transform: translateY(-160%);
+  transform: translateY(-180%);
   transition: transform 0.2s var(--ease);
 }
 
@@ -113,10 +124,10 @@ main,
   transform: translateY(0);
 }
 
-/* ── Graph grid ──────────────────────────────────────────────── */
+/* Graph paper */
 .grid-layer {
   position: fixed;
-  inset: -10%;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
   background-image:
@@ -129,19 +140,34 @@ main,
     var(--grid) var(--grid),
     calc(var(--grid) * 5) calc(var(--grid) * 5),
     calc(var(--grid) * 5) calc(var(--grid) * 5);
-  opacity: 0.5;
-  -webkit-mask-image: radial-gradient(ellipse at 46% 24%, #000 20%, transparent 80%);
-  mask-image: radial-gradient(ellipse at 46% 24%, #000 20%, transparent 80%);
-  animation: grid-drift 120s linear infinite;
-  will-change: background-position;
+  opacity: 0.32;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* Print trim */
+.page-frame {
+  position: fixed;
+  inset: 10px;
+  z-index: 75;
+  pointer-events: none;
+  border: 1px solid #fff;
+  mix-blend-mode: difference;
+  opacity: 0.24;
+}
 
-  .grid-layer {
-    animation: none;
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 85;
+  height: 2px;
+  background: var(--ink);
+  transform: scaleX(var(--progress));
+  transform-origin: left;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .page-frame {
+    inset: 6px;
   }
 }

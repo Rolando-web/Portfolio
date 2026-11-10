@@ -1,7 +1,9 @@
 # Rolando-web Portfolio
 
-Monochrome "Paper Graphite" portfolio for Rolando Luayon — semi full stack
-web developer in Davao City.
+Monochrome editorial-dossier portfolio for Rolando Luayon — semi full stack
+web developer in Davao City. The page is built as a printed technical
+monograph: a fixed masthead, numbered sheets, full-bleed project plates, a
+credential ledger, and a dark closing spread.
 
 ## Run locally
 
@@ -29,16 +31,18 @@ assets/images/
   projects/canson/         pending (see README inside)
 src/css/
   main.css                 entry — imports only
-  tokens.css               colors, type, spacing
-  base.css                 reset, grid background, focus, skip link
-  layout.css               rail, top bar, drawer, hero, sections, footer
-  components.css           buttons, bento, ledger, form, modal
+  tokens.css               paper/ink palette, type, grid, easing
+  base.css                 reset, graph paper, print trim, focus, skip link
+  layout.css               masthead, index overlay, hero, work plates, ledger
+  components.css           buttons, modal/carousel, custom cursor
   animations.css           keyframes, reveal states, reduced motion
 src/js/
   main.js                  entry — initializes modules
-  navigation.js            rail/drawer nav, scroll progress, active section
+  navigation.js            masthead, index overlay, clock, sheet marker, progress
   project-modal.js         modal, gallery, focus trap, autoplay rules
-  reveal.js                scroll reveals
+  reveal.js                scroll reveals, image parallax, magnetic buttons
+  cursor.js                difference-blend custom cursor (fine pointers only)
+  cert-preview.js          credential hover preview
   rate-limit.js            reusable request throttle
   contact-form.js          validation + EmailJS submission
   config.js                EmailJS identifiers (public by design)
@@ -46,11 +50,11 @@ src/js/
 scripts/
   dev-server.mjs           zero-dependency static server
   capture-baseline.mjs     before/after screenshots
-  capture-review.mjs       desktop, mobile, and modal screenshots
+  capture-review.mjs       desktop, mobile, index overlay, modal screenshots
   capture-travelconnect-admin.mjs  admin captures (env credentials only)
   optimize-images.mjs      resize + PNG compression
-  audit.mjs                layout, image, and modal audit
-  verify.mjs               rate limit, reduced motion, drawer, a11y audit
+  audit.mjs                layout, contrast, overlay, image, and modal audit
+  verify.mjs               rate limit, reduced motion, overlay, a11y audit
 docs/
   PLAN.md                  full phased plan and gates
   DESIGN-SYSTEM.md         tokens, components, motion rules
@@ -66,6 +70,9 @@ docs/
 | `npm run dev` | Serve the site at `http://localhost:4173` |
 | `npm run capture:baseline` | Save before/after screenshots to `docs/baseline/` |
 | `npm run optimize:images` | Resize to 1440px wide and re-compress PNGs |
+| `node scripts/audit.mjs` | Layout, contrast, overlay, modal, and form sweep |
+| `node scripts/verify.mjs` | Rate limit, reduced motion, overlay, and a11y checks |
+| `node scripts/capture-review.mjs` | Review captures in `docs/baseline/review/` |
 
 Adjacent scripts run directly with `node scripts/<name>.mjs`.
 
@@ -82,9 +89,15 @@ See `docs/OWNER-ACTIONS.md` for the provider-side steps.
 
 ## Motion
 
-All animation respects `prefers-reduced-motion: reduce`: the 20px grid stops
-drifting across its 120s loop, reveals render immediately, and the project
-gallery stops auto-advancing.
+All animation respects `prefers-reduced-motion: reduce`. Under reduced motion
+the hero lines and scroll reveals render immediately, the ticker becomes a
+scrollable strip, image parallax, magnetic buttons, and the custom cursor are
+disabled, and the project gallery stops auto-advancing.
+
+The motion set: hero line wipe, staggered index-overlay rows, scroll reveals,
+image parallax inside the work plates, a full-bleed technology ticker, a
+magnetic primary button, a difference-blend cursor, a live Davao clock, a
+scroll progress bar, a sheet indicator, and the credential preview swap.
 
 ## Credits
 

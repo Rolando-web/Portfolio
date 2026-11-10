@@ -59,51 +59,69 @@ try {
 
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
   await page.goto(base, { waitUntil: "networkidle2", timeout: 60000 });
-  await new Promise((resolve) => setTimeout(resolve, 1400));
+  await new Promise((resolve) => setTimeout(resolve, 1600));
+  await page.screenshot({ path: path.join(outDir, "desktop-fold.png") });
+  await page.screenshot({ path: path.join(outDir, "desktop-hero-full.png") });
+  await page.evaluate(() => document.getElementById("indexToggle")?.click());
+  await new Promise((resolve) => setTimeout(resolve, 900));
+  await page.screenshot({ path: path.join(outDir, "desktop-index.png") });
+  await page.keyboard.press("Escape");
+  await new Promise((resolve) => setTimeout(resolve, 800));
+
   await loadLazyImages(page);
   await page.screenshot({ path: path.join(outDir, "desktop-full.png"), fullPage: true });
-  await page.screenshot({ path: path.join(outDir, "desktop-fold.png") });
 
   await page.evaluate(() => {
     document.querySelector(".view-project-btn")?.click();
   });
   await new Promise((resolve) => setTimeout(resolve, 1200));
   await page.screenshot({ path: path.join(outDir, "desktop-modal.png") });
-
   await page.keyboard.press("Escape");
   await new Promise((resolve) => setTimeout(resolve, 300));
 
+  /* Section captures at desktop. */
+  const sections = [
+    ["projects", "#projects"],
+    ["certificates", "#certificates"],
+    ["contact", "#contact"],
+  ];
+  for (const [name, selector] of sections) {
+    await page.evaluate((sel) => document.querySelector(sel)?.scrollIntoView(), selector);
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    await page.screenshot({ path: path.join(outDir, `desktop-${name}.png`) });
+  }
+
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
   await page.reload({ waitUntil: "networkidle2", timeout: 60000 });
-  await new Promise((resolve) => setTimeout(resolve, 1200));
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+  await page.screenshot({ path: path.join(outDir, "mobile-fold.png") });
+  await page.evaluate(() => document.getElementById("indexToggle")?.click());
+  await new Promise((resolve) => setTimeout(resolve, 900));
+  await page.screenshot({ path: path.join(outDir, "mobile-index.png") });
+  await page.keyboard.press("Escape");
+  await new Promise((resolve) => setTimeout(resolve, 800));
   await loadLazyImages(page);
   await page.screenshot({ path: path.join(outDir, "mobile-full.png"), fullPage: true });
-
-  await page.evaluate(() => {
-    document.getElementById("navToggle")?.click();
-  });
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  await page.screenshot({ path: path.join(outDir, "mobile-drawer.png") });
 
   const audit = await page.evaluate(() => ({
     title: document.title,
     h1: document.querySelector("h1")?.innerText,
     projectCards: document.querySelectorAll(".project-card").length,
-    bentoCards: document.querySelectorAll(".bento-card").length,
+    workRows: document.querySelectorAll(".work-row").length,
+    indexLinks: document.querySelectorAll(".index-nav a").length,
     images: [...document.images]
       .filter((img) => img.getClientRects().length > 0)
       .map((img) => ({
         src: img.getAttribute("src"),
         ok: img.complete && img.naturalWidth > 0,
       })),
-    horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+    horizontalOverflow:
+      document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
     emailjsLoaded: Boolean(window.emailjs),
   }));
 
   console.log(JSON.stringify(audit, null, 2));
-  console.log(
-    problems.length ? "PROBLEMS:\n" + problems.join("\n") : "No console/network problems."
-  );
+  console.log(problems.length ? "PROBLEMS:\n" + problems.join("\n") : "No console/network problems.");
 } finally {
   await browser.close();
 }
