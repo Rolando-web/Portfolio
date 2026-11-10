@@ -3,518 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="icon" type="image/png" href="/images/webicon.png">
+    <title>Rolando Luayon — Semi Full Stack Web Developer</title>
+    <meta name="description" content="Portfolio of Rolando Luayon, a semi full stack web developer in Davao City building Laravel, PHP, and JavaScript applications with real payment, order, and management systems.">
+    <link rel="canonical" href="https://portfolio-gold-two-93.vercel.app/">
+    <meta name="theme-color" content="#e6e5e0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rolando Luayon — Semi Full Stack Web Developer">
+    <meta property="og:description" content="Laravel, PHP, and JavaScript systems built end to end: library management, travel booking, and order tracking.">
+    <meta property="og:url" content="https://portfolio-gold-two-93.vercel.app/">
+    <meta property="og:image" content="https://portfolio-gold-two-93.vercel.app/assets/images/projects/travelconnect/01-home.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rolando Luayon — Semi Full Stack Web Developer">
+    <meta name="twitter:description" content="Laravel, PHP, and JavaScript systems built end to end.">
+    <meta name="twitter:image" content="https://portfolio-gold-two-93.vercel.app/assets/images/projects/travelconnect/01-home.png">
+
+    <link rel="icon" type="image/png" href="./assets/images/brand/webicon.png">
+    <link rel="apple-touch-icon" href="./assets/images/brand/webicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "h1Ra7lI1Kl4jI9ZhB",
-      });
-   })();
-</script>
-
 </head>
 <body>
-    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md shadow-lg z-50 border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-2 text-2xl font-bold text-white">
-                    <i class="fas fa-code text-blue-500"></i>
-                    <span>Rolando-web</span>
-                </div>
-                <div class="hidden md:flex gap-8">
-                    <a href="#intro" class="nav-link text-slate-300 font-medium hover:text-blue-400">Home</a>
-                    <a href="#projects" class="nav-link text-slate-300 font-medium hover:text-blue-400">Projects</a>
-                    <a href="#certificates" class="nav-link text-slate-300 font-medium hover:text-blue-400">Certificates</a>
-                    <a href="#contact" class="nav-link text-slate-300 font-medium hover:text-blue-400">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <section id="intro" class="pt-32 pb-20 px-6 bg-slate-900">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="flex-1 space-y-6">
-                    <div class="inline-block">
-                        <span class="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold border border-blue-500/30">
-                            Available for Freelance
-                        </span>
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
-                        Semi Full Stack Web Developer
+    <div class="grid-layer" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="brand" href="#intro" aria-label="Rolando-web, back to top">
+                <span class="brand-mark" aria-hidden="true">RL</span>
+                <span class="brand-text">Rolando-web<br>Full stack</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#intro" data-index="01">Home</a>
+                <a href="#projects" data-index="02">Projects</a>
+                <a href="#certificates" data-index="03">Certificates</a>
+                <a href="#contact" data-index="04">Contact</a>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    </header>
+
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+        <nav aria-label="Mobile">
+            <a href="#intro"><span>01</span> Home</a>
+            <a href="#projects"><span>02</span> Projects</a>
+            <a href="#certificates"><span>03</span> Certificates</a>
+            <a href="#contact"><span>04</span> Contact</a>
+        </nav>
+        <p class="drawer-meta">Davao City, PH · tluayon7@gmail.com</p>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+    <main id="main">
+        <section id="intro" class="hero">
+            <div class="shell hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span>Available for freelance</span></p>
+                    <h1>
+                        <span class="line">Semi full stack</span>
+                        <span class="line"><em>web developer</em></span>
                     </h1>
-                    <p class="text-xl text-slate-300 leading-relaxed">
+                    <p class="hero-intro">
                         Crafting robust and scalable web applications with modern technologies.
                         Specialized in Laravel backend development and dynamic frontend solutions.
                     </p>
-                    <div class="flex flex-wrap gap-3 pt-4">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">PHP</span>
-                        <span class="tech-badge">Laravel</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Tailwind</span>
-                        <span class="tech-badge">Bootstrap</span>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn">Get in touch <i class="fas fa-arrow-right arrow" aria-hidden="true"></i></a>
+                        <a href="#projects" class="btn btn--ghost">View projects <i class="fas fa-arrow-down arrow" aria-hidden="true"></i></a>
                     </div>
-                    <div class="flex gap-4 pt-6">
-                        <a href="#contact" class="btn-primary">Get In Touch</a>
-                        <a href="#projects" class="btn-secondary">View Projects</a>
-                    </div>
-                </div>
-                <div class="flex-1 flex justify-center">
-                    <div class="w-80 h-80 gradient-box rounded-3xl shadow-2xl overflow-hidden hero-image">
-                        <img src="images/profile/profile.png" alt="Profile" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 px-6 bg-slate-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <i class="fas fa-briefcase text-blue-400 text-xl"></i>
-                    <span class="section-label">Portfolio</span>
-                </div>
-                <h2 class="text-4xl font-bold text-white mb-4">Featured Projects</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-                    A selection of my recent work showcasing expertise in full-stack development
-                </p>
-            </div>
-
-            <!-- Swiper Container -->
-            <div class="swiper projectSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1: Library Management System -->
-                    <div class="swiper-slide">
-                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
-                            data-title="Library Management System"
-                            data-description="Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash."
-                            data-images='["./images/LMS/Screenshot%202025-12-17%20004730.png", "./images/LMS/Screenshot%202025-12-17%20005009.png", "./images/LMS/Screenshot%202025-12-17%20005023.png", "./images/LMS/Screenshot%202025-12-17%20005034.png", "./images/LMS/Screenshot%202025-12-17%20005046.png", "./images/LMS/Screenshot%202025-12-17%20005054.png", "./images/LMS/Screenshot%202025-12-17%20005105.png", "./images/LMS/Screenshot%202025-12-17%20005126.png", "./images/LMS/Screenshot%202025-12-17%20005231.png", "./images/LMS/Screenshot%202025-12-17%20005247.png", "./images/LMS/Screenshot%202025-12-17%20005305.png", "./images/LMS/Screenshot%202025-12-17%20005322.png", "./images/LMS/Screenshot%202025-12-17%20005356.png", "./images/LMS/Screenshot%202025-12-17%20005410.png"]'
-                            data-url="https://lms-production-kran.onrender.com/">
-                            <div class="h-48 bg-slate-700 overflow-hidden">
-                                <img src="./images/LMS/Screenshot%202025-12-17%20004730.png" alt="Library Management System" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                            </div>
-                            <div class="p-6 flex flex-col flex-1">
-                                <h3 class="text-xl font-bold text-white mb-3">Library Management System</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">
-                                    Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash.
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
-                                    </div>
-                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
-                                        View Project <i class="fas fa-eye text-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: E-Commerce Platform -->
-                    <div class="swiper-slide">
-                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
-                            data-title="E-Commerce Platform"
-                            data-description="Full-featured e-commerce solution with product catalog, shopping cart, user authentication, order management, and secure payment gateway integration."
-                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Home", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Products", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=E-Commerce+Cart"]'
-                            data-url="https://example.com/ecommerce">
-                            <div class="h-48 bg-slate-700 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=E-Commerce" alt="E-Commerce Platform" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                            </div>
-                            <div class="p-6 flex flex-col flex-1">
-                                <h3 class="text-xl font-bold text-white mb-3">E-Commerce Platform</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">
-                                    Full-featured e-commerce solution with product catalog, shopping cart, user authentication, order management, and secure payment gateway integration.
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
-                                    </div>
-                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
-                                        View Project <i class="fas fa-eye text-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: Content Management System -->
-                    <div class="swiper-slide">
-                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
-                            data-title="Content Management System"
-                            data-description="Custom CMS with role-based access control, allowing clients to easily manage their website content with an intuitive dashboard."
-                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Dashboard", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Editor", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=CMS+Settings"]'
-                            data-url="https://example.com/cms">
-                            <div class="h-48 bg-slate-700 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=CMS" alt="Content Management System" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                            </div>
-                            <div class="p-6 flex flex-col flex-1">
-                                <h3 class="text-xl font-bold text-white mb-3">Content Management System</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">
-                                    Custom CMS with role-based access control, allowing clients to easily manage their website content with an intuitive dashboard.
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">PHP</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">HTML</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">CSS</span>
-                                    </div>
-                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
-                                        View Project <i class="fas fa-eye text-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Task Management App -->
-                    <div class="swiper-slide">
-                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
-                            data-title="Task Management App"
-                            data-description="A collaborative task management application with real-time updates, drag-and-drop functionality, team assignments, and progress tracking."
-                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Dashboard", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Board", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Task+Analytics"]'
-                            data-url="https://example.com/taskapp">
-                            <div class="h-48 bg-slate-700 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=Task+App" alt="Task Management App" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                            </div>
-                            <div class="p-6 flex flex-col flex-1">
-                                <h3 class="text-xl font-bold text-white mb-3">Task Management App</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">
-                                    A collaborative task management application with real-time updates, drag-and-drop functionality, team assignments, and progress tracking.
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Laravel</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Vue.js</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">MySQL</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
-                                    </div>
-                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
-                                        View Project <i class="fas fa-eye text-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5: Portfolio Website -->
-                    <div class="swiper-slide">
-                        <div class="project-card bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 flex flex-col h-full"
-                            data-title="Portfolio Website"
-                            data-description="A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and contact form integration."
-                            data-images='["https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Home", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Projects", "https://via.placeholder.com/800x500/1e293b/60a5fa?text=Portfolio+Contact"]'
-                            data-url="https://example.com/portfolio">
-                            <div class="h-48 bg-slate-700 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300/1e293b/60a5fa?text=Portfolio" alt="Portfolio Website" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                            </div>
-                            <div class="p-6 flex flex-col flex-1">
-                                <h3 class="text-xl font-bold text-white mb-3">Portfolio Website</h3>
-                                <p class="text-slate-300 mb-4 leading-relaxed">
-                                    A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and contact form integration.
-                                </p>
-                                <div class="mt-auto">
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">HTML</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">CSS</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">JavaScript</span>
-                                        <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md text-sm font-medium border border-blue-500/30">Tailwind</span>
-                                    </div>
-                                    <button class="view-project-btn inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all bg-transparent border-none cursor-pointer">
-                                        View Project <i class="fas fa-eye text-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Swiper Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificates" class="py-20 px-6 bg-slate-900">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <i class="fas fa-award text-blue-400 text-xl"></i>
-                    <span class="section-label">Achievements</span>
-                </div>
-                <h2 class="text-4xl font-bold text-white mb-4">Certificates & Credentials</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-                    Professional certifications validating my technical expertise
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
-                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
-                        <img src="/images/cert/database.png" alt="database Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 flex flex-col justify-between flex-1">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                                <i class="fas fa-award text-blue-400 text-xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist Database</h3>
-                                <p class="text-slate-300">database</p>
-                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">Sep 2025</span>
-                            </div>
-                        </div>
-                        <a href="https://www.credly.com/earner/earned/badge/0d4c7c7b-64e0-4dc3-8fbf-f921608012ac" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
-                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
-                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
-                        <img src="/images/cert/java.png" alt="Java Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 flex flex-col justify-between flex-1">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                                <i class="fas fa-award text-blue-400 text-xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist Java</h3>
-                                <p class="text-slate-300">java</p>
-                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">March 2024</span>
-                            </div>
-                        </div>
-                        <a href="https://www.credly.com/badges/cc10cef3-585d-481c-9dea-eb6e67866f5d/linked_in_profile" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
-                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
-                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
-                        <img src="/images/cert/css.png" alt="Css Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 flex flex-col justify-between flex-1">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                                <i class="fas fa-award text-blue-400 text-xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-1">CSS</h3>
-                                <p class="text-slate-300">css</p>
-                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">April 2025</span>
-                            </div>
-                        </div>
-                        <a href="https://www.credly.com/badges/a18a13ea-8af7-4ed6-b855-3c5c0768a5c0/linked_in_profile" class="inline-flex items-center gap-2 text-blue-400 hover:text-[#2563eb] font-semibold hover:gap-3 transition-all mt-4">
-                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cert-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col md:flex-row">
-                    <div class="md:w-48 h-48 bg-slate-700 overflow-hidden flex-shrink-0">
-                        <img src="/images/cert/html-css.png" alt="Full Stack Certificate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 flex flex-col justify-between flex-1">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                                <i class="fas fa-award text-blue-400 text-xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-bold text-white mb-1">IT Specialist HTML/CSS -</h3>
-                                <p class="text-slate-300">Html</p>
-                                <span class="inline-block mt-2 text-sm text-blue-400 font-semibold">Dec 2025</span>
-                            </div>
-                        </div>
-                        <a href="https://www.credly.com/badges/437d59f6-e225-4359-bdf2-27ccc59d4272" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:gap-3 transition-all mt-4 hover:text-[#2563eb]">
-                            View Cert <i class="fas fa-external-link-alt text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 px-6 bg-slate-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="flex items-center justify-center gap-2 mb-4">
-                    <i class="fas fa-envelope text-blue-400 text-xl"></i>
-                    <span class="section-label">Get In Touch</span>
-                </div>
-                <h2 class="text-4xl font-bold text-white mb-4">Let's Work Together</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-                    Have a project in mind? Feel free to reach out and let's create something amazing
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                            <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                    <ul class="hero-tags" aria-label="Core technologies">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>Laravel</li>
+                        <li>MySQL</li>
+                        <li>Tailwind</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                    <dl class="hero-stats">
+                        <div>
+                            <dt>Based in</dt>
+                            <dd>Davao City, PH</dd>
                         </div>
                         <div>
-                            <h3 class="font-bold text-white mb-1">Email</h3>
-                            <a href="mailto:your.email@example.com" class="text-slate-300 hover:text-blue-400 transition-colors">tluayon7@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                            <i class="fas fa-phone text-blue-400 text-xl"></i>
+                            <dt>Focus</dt>
+                            <dd>Laravel &amp; APIs</dd>
                         </div>
                         <div>
-                            <h3 class="font-bold text-white mb-1">Phone</h3>
-                            <a href="tel:+639702446885" class="text-slate-300 hover:text-blue-400 transition-colors">+63 970 244 6885</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                            <i class="fas fa-map-marker-alt text-blue-400 text-xl"></i>
+                            <dt>Projects</dt>
+                            <dd>03 shipped</dd>
                         </div>
                         <div>
-                            <h3 class="font-bold text-white mb-1">Location</h3>
-                            <p class="text-slate-300">Davao City, Philippines</p>
+                            <dt>Status</dt>
+                            <dd>Open for work</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <figure class="hero-figure profile-frame">
+                    <img src="./assets/images/profile/profile.png" alt="Portrait of Rolando Luayon" width="448" height="445" fetchpriority="high">
+                    <figcaption class="frame-caption">
+                        <span>Rolando Luayon</span>
+                        <span>Est. 2024</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="section-index">01 / Selected work</p>
+                    <div>
+                        <h2 class="section-title">Projects built end to end.</h2>
+                        <p class="section-lede">
+                            A selection of my recent work showcasing expertise in full-stack development.
+                            Each project covers the data model, the interface, and the deployment.
+                        </p>
+                    </div>
+                </div>
+                <div class="rule" aria-hidden="true"></div>
+
+                <div class="swiper projectSwiper project-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="project-card"
+                                data-title="Library Management System"
+                                data-description="Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash."
+                                data-images='["./assets/images/projects/lms/01.png", "./assets/images/projects/lms/02.png", "./assets/images/projects/lms/03.png", "./assets/images/projects/lms/04.png", "./assets/images/projects/lms/05.png", "./assets/images/projects/lms/06.png", "./assets/images/projects/lms/07.png", "./assets/images/projects/lms/08.png", "./assets/images/projects/lms/09.png", "./assets/images/projects/lms/10.png", "./assets/images/projects/lms/11.png", "./assets/images/projects/lms/12.png", "./assets/images/projects/lms/13.png", "./assets/images/projects/lms/14.png"]'
+                                data-url="https://lms-production-kran.onrender.com/">
+                                <div class="project-media">
+                                    <span class="media-index" aria-hidden="true">01</span>
+                                    <img src="./assets/images/projects/lms/01.png" alt="Library Management System dashboard" width="1902" height="756" loading="lazy" decoding="async">
+                                </div>
+                                <div class="project-body">
+                                    <h3 class="project-title">Library Management System</h3>
+                                    <p class="project-copy">
+                                        Full‑featured LMS built with Laravel, role‑based access (User, Admin, Super‑Admin), borrow/return approval, automatic overdue ₱ and damage violation fees, PayMongo payment integration for PayPal and GCash.
+                                    </p>
+                                    <div class="project-foot">
+                                        <div class="tags" aria-label="Technology stack">
+                                            <span class="tag">Laravel</span>
+                                            <span class="tag">PHP</span>
+                                            <span class="tag">MySQL</span>
+                                            <span class="tag">JavaScript</span>
+                                            <span class="tag">Tailwind</span>
+                                        </div>
+                                        <button class="project-link view-project-btn" type="button" aria-label="View Library Management System project">
+                                            View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="project-card"
+                                data-title="TravelConnect"
+                                data-description="Full-stack online travel agency covering flights, hotels, cars, and packages, with PayMongo payments and 3-D Secure card checkout, cancellations and refunds, PDF itineraries, customer support, and a role-based admin dashboard."
+                                data-images='["./assets/images/projects/travelconnect/01-home.png", "./assets/images/projects/travelconnect/02-flights.png", "./assets/images/projects/travelconnect/03-hotels.png", "./assets/images/projects/travelconnect/04-deals.png", "./assets/images/projects/travelconnect/05-admin-dashboard.png"]'
+                                data-url="https://travel-connect-xi.vercel.app/">
+                                <div class="project-media">
+                                    <span class="media-index" aria-hidden="true">02</span>
+                                    <img src="./assets/images/projects/travelconnect/01-home.png" alt="TravelConnect booking homepage" width="1440" height="900" loading="lazy" decoding="async">
+                                </div>
+                                <div class="project-body">
+                                    <h3 class="project-title">TravelConnect</h3>
+                                    <p class="project-copy">
+                                        Online travel agency for flights, hotels, cars, and packages. PayMongo payments with 3-D Secure checkout, cancellations and refunds, PDF itineraries, customer support, and a role-based admin dashboard.
+                                    </p>
+                                    <div class="project-foot">
+                                        <div class="tags" aria-label="Technology stack">
+                                            <span class="tag">React 19</span>
+                                            <span class="tag">Vite</span>
+                                            <span class="tag">Tailwind</span>
+                                            <span class="tag">ASP.NET Core</span>
+                                            <span class="tag">SQL Server</span>
+                                            <span class="tag">PayMongo</span>
+                                        </div>
+                                        <button class="project-link view-project-btn" type="button" aria-label="View TravelConnect project">
+                                            View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="project-card"
+                                data-title="Canson Order &amp; Workforce System"
+                                data-description="Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics."
+                                data-images='[]'
+                                data-url="https://github.com/Rolando-web/Canson-s-Order-Tracking-and-Workforce-Tasking-System"
+                                data-url-label="View repository">
+                                <div class="project-media project-media--empty">
+                                    <span class="media-index" aria-hidden="true">03</span>
+                                    <span class="media-empty-label">Screenshots pending</span>
+                                </div>
+                                <div class="project-body">
+                                    <h3 class="project-title">Canson Order &amp; Workforce System</h3>
+                                    <p class="project-copy">
+                                        Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics.
+                                    </p>
+                                    <div class="project-foot">
+                                        <div class="tags" aria-label="Technology stack">
+                                            <span class="tag">Laravel 12</span>
+                                            <span class="tag">PHP 8.2</span>
+                                            <span class="tag">MySQL</span>
+                                            <span class="tag">Blade</span>
+                                            <span class="tag">Tailwind</span>
+                                            <span class="tag">Pest</span>
+                                        </div>
+                                        <button class="project-link view-project-btn" type="button" aria-label="View Canson Order and Workforce System project">
+                                            View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="pt-6">
-                        <h3 class="font-bold text-white mb-4">Connect With Me</h3>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer" class="social-icon">
-                                <i class="fab fa-github text-xl"></i>
+        <section id="certificates" class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="section-index">02 / Credentials</p>
+                    <div>
+                        <h2 class="section-title">Certificates &amp; credentials.</h2>
+                        <p class="section-lede">
+                            Professional certifications validating my technical expertise,
+                            each verifiable through Credly.
+                        </p>
+                    </div>
+                </div>
+                <div class="rule" aria-hidden="true"></div>
+
+                <div class="cert-grid">
+                    <article class="cert-card" data-reveal>
+                        <div class="cert-media">
+                            <img src="./assets/images/certificates/database.png" alt="IT Specialist Database badge" width="392" height="369" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cert-body">
+                            <p class="cert-kicker">Credly badge</p>
+                            <h3 class="cert-title">IT Specialist Database</h3>
+                            <p class="cert-meta">Sep 2025</p>
+                            <a class="cert-link" href="https://www.credly.com/earner/earned/badge/0d4c7c7b-64e0-4dc3-8fbf-f921608012ac" target="_blank" rel="noopener noreferrer">
+                                View credential <span aria-hidden="true">↗</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                                <i class="fab fa-linkedin text-xl"></i>
+                        </div>
+                    </article>
+
+                    <article class="cert-card" data-reveal data-delay="1">
+                        <div class="cert-media">
+                            <img src="./assets/images/certificates/java.png" alt="IT Specialist Java badge" width="360" height="358" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cert-body">
+                            <p class="cert-kicker">Credly badge</p>
+                            <h3 class="cert-title">IT Specialist Java</h3>
+                            <p class="cert-meta">March 2024</p>
+                            <a class="cert-link" href="https://www.credly.com/badges/cc10cef3-585d-481c-9dea-eb6e67866f5d/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                View credential <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="cert-card" data-reveal>
+                        <div class="cert-media">
+                            <img src="./assets/images/certificates/css.png" alt="CSS badge" width="324" height="323" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cert-body">
+                            <p class="cert-kicker">Credly badge</p>
+                            <h3 class="cert-title">CSS</h3>
+                            <p class="cert-meta">April 2025</p>
+                            <a class="cert-link" href="https://www.credly.com/badges/a18a13ea-8af7-4ed6-b855-3c5c0768a5c0/linked_in_profile" target="_blank" rel="noopener noreferrer">
+                                View credential <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="cert-card" data-reveal data-delay="1">
+                        <div class="cert-media">
+                            <img src="./assets/images/certificates/html-css.png" alt="IT Specialist HTML and CSS badge" width="354" height="356" loading="lazy" decoding="async">
+                        </div>
+                        <div class="cert-body">
+                            <p class="cert-kicker">Credly badge</p>
+                            <h3 class="cert-title">IT Specialist HTML/CSS -</h3>
+                            <p class="cert-meta">Dec 2025</p>
+                            <a class="cert-link" href="https://www.credly.com/badges/437d59f6-e225-4359-bdf2-27ccc59d4272" target="_blank" rel="noopener noreferrer">
+                                View credential <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="section-index">03 / Contact</p>
+                    <div>
+                        <h2 class="section-title">Let's work together.</h2>
+                        <p class="section-lede">
+                            Have a project in mind? Feel free to reach out and let's create something amazing.
+                        </p>
+                    </div>
+                </div>
+                <div class="rule" aria-hidden="true"></div>
+
+                <div class="contact-grid">
+                    <div data-reveal>
+                        <h3 class="contact-heading">Tell me what you are building.</h3>
+                        <p class="contact-copy">
+                            I usually reply within two business days. For urgent work,
+                            call or message the number below.
+                        </p>
+
+                        <dl class="contact-list">
+                            <div>
+                                <dt>Email</dt>
+                                <dd><a href="mailto:tluayon7@gmail.com">tluayon7@gmail.com</a></dd>
+                            </div>
+                            <div>
+                                <dt>Phone</dt>
+                                <dd><a href="tel:+639702446885">+63 970 244 6885</a></dd>
+                            </div>
+                            <div>
+                                <dt>Location</dt>
+                                <dd>Davao City, Philippines</dd>
+                            </div>
+                        </dl>
+
+                        <div class="socials" aria-label="Social profiles">
+                            <a class="social-link" href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                            <a class="social-link" href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
+
+                    <form class="contact-form" id="contactForm" novalidate data-reveal data-delay="1">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required maxlength="80" autocomplete="name" placeholder="Your name" aria-describedby="name-error">
+                            <p class="field-error" id="name-error" data-error-for="name" hidden></p>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required maxlength="120" autocomplete="email" placeholder="your.email@gmail.com" aria-describedby="email-error">
+                            <p class="field-error" id="email-error" data-error-for="email" hidden></p>
+                        </div>
+
+                        <div class="field">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" required maxlength="120" placeholder="Your project title" aria-describedby="title-error">
+                            <p class="field-error" id="title-error" data-error-for="title" hidden></p>
+                        </div>
+
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required rows="5" maxlength="2000" placeholder="Tell me about your project..." aria-describedby="message-error"></textarea>
+                            <p class="field-error" id="message-error" data-error-for="message" hidden></p>
+                        </div>
+
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="btn btn--block">
+                            <span data-label>Send message</span>
+                            <i class="fas fa-arrow-right arrow" aria-hidden="true"></i>
+                        </button>
+
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        <p class="form-note">One message per minute · max three per ten minutes.</p>
+                    </form>
                 </div>
-
-                <form class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-semibold text-slate-200 mb-2">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            class="form-input p-2"
-                            placeholder="Your name"
-                        >
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-slate-200 mb-2">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            class="form-input p-2"
-                            placeholder="your.email@gmail.com"
-                        >
-                    </div>
-
-                        <div>
-                        <label for="title" class="block text-sm font-semibold text-slate-200 mb-2">Title</label>
-                        <input
-                            type="text"
-                            id="title"
-                            name="title"
-                            required
-                            class="form-input p-2"
-                            placeholder="Your project title"
-                        >
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-slate-200 mb-2">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            required
-                            rows="5"
-                            class="form-input p-2"
-                            placeholder="Tell me about your project..."
-                        ></textarea>
-                    </div>
-
-                    <button type="button" class="btn-primary w-full" onclick="submitMail()">Send Message</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal-overlay hidden">
-        <div class="modal-container">
-            <button id="closeModal" class="modal-close">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="modal-content">
-                <h3 id="modalTitle" class="text-2xl font-bold text-white mb-4">Project Title</h3>
-                
-                <!-- Carousel -->
-                <div class="carousel-container">
-                    <div id="carouselImages" class="carousel-wrapper">
-                        <!-- Images will be inserted here dynamically -->
-                    </div>
-                    
-                    <!-- Carousel Controls -->
-                    <button id="prevBtn" class="carousel-btn carousel-btn-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button id="nextBtn" class="carousel-btn carousel-btn-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    
-                    <!-- Carousel Indicators -->
-                    <div id="carouselIndicators" class="carousel-indicators">
-                        <!-- Indicators will be inserted here dynamically -->
-                    </div>
+    <footer class="site-footer">
+        <div class="shell footer-grid">
+            <p>© 2024 Rolando-web</p>
+            <p>Built with HTML, CSS &amp; JavaScript</p>
+            <p><a href="mailto:tluayon7@gmail.com">tluayon7@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-panel">
+            <div class="modal-head">
+                <div>
+                    <p class="modal-kicker">Project file</p>
+                    <h3 id="modalTitle" class="modal-title">Project Title</h3>
                 </div>
-                
-                <p id="modalDescription" class="text-slate-300 mt-4 mb-6 leading-relaxed">Project description goes here.</p>
-                
-                <a id="visitSiteBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2">
-                    <i class="fas fa-external-link-alt"></i>
-                    Visit Site
+                <button id="closeModal" class="modal-close" type="button" aria-label="Close project details">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="modal-gallery" id="modalGallery">
+                <div id="carouselImages" class="carousel"></div>
+                <button id="prevBtn" class="gallery-btn gallery-prev" type="button" aria-label="Previous screenshot">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button id="nextBtn" class="gallery-btn gallery-next" type="button" aria-label="Next screenshot">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <div id="carouselIndicators" class="carousel-indicators"></div>
+            </div>
+
+            <div class="modal-foot">
+                <p id="modalDescription" class="modal-copy">Project description goes here.</p>
+                <a id="visitSiteBtn" class="btn" href="#" target="_blank" rel="noopener noreferrer">
+                    <span data-label>Visit site</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <footer class="bg-slate-950 text-white py-8 px-6 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-slate-400">© 2024 Rolando-web. Built with HTML, CSS & Tailwind</p>
-        </div>
-    </footer>
+    <script type="module" src="./src/js/main.js"></script>
 
-    <script src="script.js"></script>
-    <script src="email.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rolando Luayon",
+      "jobTitle": "Semi Full Stack Web Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Davao City",
+        "addressCountry": "PH"
+      },
+      "email": "mailto:tluayon7@gmail.com",
+      "telephone": "+639702446885",
+      "url": "https://portfolio-gold-two-93.vercel.app/",
+      "sameAs": [
+        "https://github.com/Rolando-web",
+        "https://www.linkedin.com/in/rolando-luayon-52ab682b9/"
+      ]
+    }
+    </script>
 </body>
 </html>

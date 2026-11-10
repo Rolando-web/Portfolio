@@ -1,2 +1,13 @@
-email.js
-.api
+node_modules/
+docs/baseline/
+capture-profile/
+
+.env
+.env.*
+!.env.example
+
+.DS_Store
+Thumbs.db
+
+npm-debug.log*
+*.log

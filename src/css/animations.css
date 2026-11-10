@@ -1,0 +1,101 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal][data-delay="1"] {
+  transition-delay: 0.08s;
+}
+
+[data-reveal][data-delay="2"] {
+  transition-delay: 0.16s;
+}
+
+[data-reveal][data-delay="3"] {
+  transition-delay: 0.24s;
+}
+
+/* Hero entrance */
+.hero-copy > * {
+  animation: rise 0.8s var(--ease) both;
+}
+
+.hero-copy > *:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.hero-copy > *:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.hero-copy > *:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.hero-copy > *:nth-child(5) {
+  animation-delay: 0.24s;
+}
+
+.hero-figure {
+  animation: rise 0.9s var(--ease) 0.18s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  .hero-copy > *,
+  .hero-figure {
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-card:hover,
+  .project-card:hover .project-media img,
+  .cert-card:hover .cert-media img {
+    transform: none;
+  }
+}

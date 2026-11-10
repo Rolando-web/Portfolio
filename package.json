@@ -1,6 +1,16 @@
 {
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.17",
-    "tailwindcss": "^4.1.17"
+  "name": "rolando-web-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio for Rolando Luayon — Laravel, PHP, and JavaScript systems.",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "capture:baseline": "node scripts/capture-baseline.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0",
+    "sharp": "^0.35.5"
   }
 }
