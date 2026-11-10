@@ -92,7 +92,7 @@ modal, carousel, form, rate limiting, and section IDs are unchanged.
 - [x] Full-screen index overlay with clip-path wipe, row stagger, focus trap, `inert` background.
 - [x] Hero rebuilt: 200px two-line name, portrait plate, lede, stack, four-column stats, ticker.
 - [x] Projects rebuilt as full-bleed alternating spreads (`1.16fr / 0.84fr`, reversed on even rows).
-- [x] Canson inverted to a dark plate with outlined `03` and graph-paper media well.
+- [x] Canson inverted to a dark plate with outlined `03` and a plain ink media well.
 - [x] Capability matrix retained as a two-column numbered index.
 - [x] Credential ledger with sticky preview swap; mobile badge thumbnails.
 - [x] Contact + footer merged into a dark closing spread.
@@ -100,6 +100,24 @@ modal, carousel, form, rate limiting, and section IDs are unchanged.
 - [x] Static 20px / 100px graph paper, print trim, scroll progress.
 - [x] Motion: hero wipe, reveals, parallax, ticker, magnetic CTA, custom cursor, index wipe, cert swap.
 - [x] Fonts, layout, modal, and form audited at 360 / 390 / 768 / 1024 / 1440 / 1920.
+
+## Readability & motion pass - 2026-11-10
+
+- [x] Grid collapsed to one uniform 20px square; no 100px major lines or nested grids (media wells and modal empty state included).
+- [x] Structural rules promoted to 2–3px ink; the sheet-head rule draws on first view.
+- [x] Body copy 18px / 1.65 / 500; labels 12px / 500–600; project copy 17px / 500.
+- [x] Hero line gap 19px at 1440, 6px at 360 (`0.1em`).
+- [x] Pest removed from the ticker, Canson stack, capability index, and content docs.
+- [x] Scroll choreography: plate wipe, copy slide, image zoom, number parallax, ledger stagger, sheet rule draw.
+- [x] Reduced motion restores plates, rules, copy, and parallax.
+
+### Motion audit (1440)
+
+- [x] Work plate starts hidden (`opacity 0`, `clip-path: inset(0 0 14%)`) and settles at `inset(0)`.
+- [x] Copy starts at `translateX(48px)` and settles at `none`.
+- [x] Sheet rule starts at `scaleX(0)` and settles at `scaleX(1)`.
+- [x] Image and number parallax update on scroll.
+- [x] Under reduced motion, plates, copy, rules, and parallax render in their final state.
 
 ## Phase 9–11 — Tests
 

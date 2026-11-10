@@ -16,8 +16,9 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -112,7 +113,7 @@ section[id] {
   padding: 10px 16px;
   background: var(--ink);
   color: var(--inverse-ink);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -124,7 +125,7 @@ section[id] {
   transform: translateY(0);
 }
 
-/* Graph paper */
+/* Graph paper — one uniform 20px grid */
 .grid-layer {
   position: fixed;
   inset: 0;
@@ -132,15 +133,11 @@ section[id] {
   pointer-events: none;
   background-image:
     linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px),
-    linear-gradient(to right, var(--line-strong) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line-strong) 1px, transparent 1px);
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
   background-size:
     var(--grid) var(--grid),
-    var(--grid) var(--grid),
-    calc(var(--grid) * 5) calc(var(--grid) * 5),
-    calc(var(--grid) * 5) calc(var(--grid) * 5);
-  opacity: 0.32;
+    var(--grid) var(--grid);
+  opacity: 0.3;
 }
 
 /* Print trim */

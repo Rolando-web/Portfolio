@@ -3,7 +3,7 @@
 Monochrome editorial-dossier portfolio for Rolando Luayon — semi full stack
 web developer in Davao City. The page is built as a printed technical
 monograph: a fixed masthead, numbered sheets, full-bleed project plates, a
-credential ledger, and a dark closing spread.
+credential ledger, a dark closing spread, and one uniform 20px graph grid.
 
 ## Run locally
 
@@ -40,7 +40,7 @@ src/js/
   main.js                  entry — initializes modules
   navigation.js            masthead, index overlay, clock, sheet marker, progress
   project-modal.js         modal, gallery, focus trap, autoplay rules
-  reveal.js                scroll reveals, image parallax, magnetic buttons
+  reveal.js                scroll reveals, image/number parallax, magnetic buttons
   cursor.js                difference-blend custom cursor (fine pointers only)
   cert-preview.js          credential hover preview
   rate-limit.js            reusable request throttle
@@ -95,7 +95,8 @@ scrollable strip, image parallax, magnetic buttons, and the custom cursor are
 disabled, and the project gallery stops auto-advancing.
 
 The motion set: hero line wipe, staggered index-overlay rows, scroll reveals,
-image parallax inside the work plates, a full-bleed technology ticker, a
+full plate clip-path wipes, project-copy slides, image and number parallax, a
+sheet-rule draw, ledger row staggering, a full-bleed technology ticker, a
 magnetic primary button, a difference-blend cursor, a live Davao clock, a
 scroll progress bar, a sheet indicator, and the credential preview swap.
 

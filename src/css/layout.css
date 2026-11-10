@@ -10,7 +10,7 @@
   height: var(--mh);
   padding: 0 var(--edge);
   background: var(--paper);
-  border-bottom: 1px solid var(--line-strong);
+  border-bottom: 2px solid var(--ink);
   transition: height 0.3s var(--ease);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .brand-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 .brand-sub {
   padding-left: 10px;
   border-left: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -51,7 +51,7 @@
 }
 
 .mast-sheet {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -97,7 +97,7 @@
   background: transparent;
   border: 0;
   border-left: 1px solid var(--line-strong);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
   gap: 20px;
   height: var(--mh);
   border-bottom: 1px solid var(--line-strong);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -166,7 +166,7 @@
   gap: 10px;
   background: transparent;
   border: 0;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -220,7 +220,7 @@
 }
 
 .index-nav .n {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--muted);
 }
@@ -267,7 +267,7 @@
   gap: 24px;
   margin-top: auto;
   padding-top: 24px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -281,7 +281,7 @@
 }
 
 .index-foot a {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .index-foot a:hover {
@@ -304,8 +304,8 @@
   grid-template-columns: 1fr 1fr auto;
   gap: 16px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--line-strong);
-  font-size: 10.5px;
+  border-bottom: 2px solid var(--line-strong);
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -328,7 +328,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 18px;
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -359,6 +359,7 @@
 }
 
 .hero-line--serif {
+  margin-top: 0.1em;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 0.95em;
@@ -401,7 +402,7 @@
   justify-content: space-between;
   gap: 10px;
   padding-top: 8px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -414,13 +415,14 @@
   align-items: end;
   margin-top: clamp(30px, 5vw, 56px);
   padding-top: clamp(24px, 3vw, 36px);
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line-strong);
 }
 
 .hero-lede {
   max-width: 46ch;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
-  line-height: 1.5;
+  font-size: clamp(1.2rem, 1.55vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
 
@@ -439,11 +441,11 @@
   gap: 10px 28px;
   margin-top: clamp(30px, 4vw, 48px);
   padding-top: 14px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line-strong);
 }
 
 .stack-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -456,7 +458,7 @@
 }
 
 .hero-stack li {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -471,8 +473,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: clamp(34px, 5vw, 56px);
-  border-top: 1px solid var(--line-strong);
-  border-bottom: 1px solid var(--line-strong);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
 }
 
 .hero-stats > div {
@@ -486,7 +488,7 @@
 }
 
 .hero-stats dt {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -526,18 +528,18 @@
 
 .ticker-group span {
   display: block;
-  padding: 13px 0;
+  padding: 14px 0;
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .ticker-group .sym {
-  padding: 13px 22px;
+  padding: 14px 22px;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 /* ── Sheets ─────────────────────────────────────────────────── */
@@ -549,26 +551,41 @@
 
 .sheet--work {
   padding-bottom: 0;
-  border-top: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
 }
 
 .sheet--certs {
-  border-top: 1px solid var(--line-strong);
+  border-top: 3px solid var(--ink);
 }
 
 .sheet-head {
+  position: relative;
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
   gap: clamp(24px, 4vw, 64px);
-  padding-bottom: clamp(30px, 4vw, 48px);
-  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: clamp(34px, 4vw, 52px);
+}
+
+.sheet-head::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.05s var(--ease) 0.12s;
+}
+
+.sheet-head.is-visible::after {
+  transform: scaleX(1);
 }
 
 .sheet-meta {
   display: grid;
   align-content: start;
   gap: 6px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -598,8 +615,9 @@
 .sheet-lede {
   max-width: 56ch;
   margin-top: 20px;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.65;
   color: var(--ink-soft);
 }
 
@@ -609,7 +627,7 @@
   grid-template-columns: 1.16fr 0.84fr;
   min-height: clamp(520px, 70vh, 740px);
   background: var(--paper);
-  border-bottom: 1px solid var(--line-strong);
+  border-bottom: 2px solid var(--ink);
   transition: background 0.45s var(--ease);
 }
 
@@ -670,7 +688,7 @@
   padding: 8px 12px;
   background: var(--ink);
   color: var(--inverse-ink);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -707,7 +725,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
@@ -750,8 +768,9 @@
 .work-desc {
   max-width: 38ch;
   margin-top: 16px;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
   color: var(--ink-soft);
 }
 
@@ -766,7 +785,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px 14px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -793,7 +812,7 @@
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--line-strong);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -859,10 +878,6 @@
   justify-content: flex-end;
   padding: clamp(24px, 4vw, 48px);
   background-color: #1b1b17;
-  background-image:
-    linear-gradient(to right, rgba(241, 239, 231, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(241, 239, 231, 0.07) 1px, transparent 1px);
-  background-size: 20px 20px;
   transition: background-color 0.3s var(--ease);
 }
 
@@ -890,7 +905,7 @@
   gap: 20px;
   padding-top: 12px;
   border-top: 1px solid rgba(241, 239, 231, 0.25);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--inverse-muted);
@@ -907,8 +922,8 @@
   justify-content: space-between;
   gap: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--line-strong);
-  font-size: 10px;
+  border-bottom: 2px solid var(--line-strong);
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -926,22 +941,22 @@
   gap: 10px;
   align-items: baseline;
   padding: 13px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .cap-row .n {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
 
 .cap-row .k {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 .cap-row .v {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-align: right;
   text-transform: uppercase;
@@ -959,7 +974,7 @@
 
 .cred-list {
   display: grid;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
 }
 
 .cred-row {
@@ -968,7 +983,7 @@
   gap: 16px;
   align-items: center;
   padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
   transition:
     background 0.3s var(--ease),
     color 0.3s var(--ease),
@@ -983,7 +998,7 @@
 }
 
 .cred-num {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--muted);
 }
@@ -997,7 +1012,7 @@
 
 .cred-title {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.8rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.005em;
@@ -1005,7 +1020,7 @@
 }
 
 .cred-sub {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1020,7 +1035,7 @@
 }
 
 .cred-date {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-align: right;
   text-transform: uppercase;
@@ -1065,7 +1080,7 @@
   margin-top: 14px;
   padding-top: 10px;
   border-top: 1px solid var(--line);
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1091,8 +1106,8 @@
   justify-content: space-between;
   gap: 16px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(241, 239, 231, 0.24);
-  font-size: 10px;
+  border-bottom: 2px solid rgba(241, 239, 231, 0.42);
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--inverse-muted);
@@ -1118,7 +1133,9 @@
 .contact-copy {
   max-width: 42ch;
   margin-top: 28px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.65;
   color: var(--inverse-muted);
 }
 
@@ -1155,21 +1172,21 @@
 }
 
 .contact-details dt {
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--inverse-muted);
 }
 
 .contact-details dd {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .contact-socials {
   display: flex;
   gap: 20px;
   margin-top: 28px;
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -1200,7 +1217,7 @@
 }
 
 .field label {
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--inverse-muted);
@@ -1212,10 +1229,10 @@
   padding: 8px 0;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(241, 239, 231, 0.32);
+  border-bottom: 2px solid rgba(241, 239, 231, 0.38);
   border-radius: 0;
   color: var(--inverse-ink);
-  font-size: 18px;
+  font-size: 19px;
   transition: border-color 0.3s var(--ease);
 }
 
@@ -1249,7 +1266,7 @@
 }
 
 .field-error {
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--inverse-ink);
@@ -1257,7 +1274,7 @@
 
 .form-note,
 .form-status {
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--inverse-muted);
 }
@@ -1293,7 +1310,7 @@
   padding: clamp(36px, 5vw, 60px) 0;
   background: var(--ink);
   color: var(--inverse-ink);
-  border-top: 1px solid rgba(241, 239, 231, 0.18);
+  border-top: 2px solid rgba(241, 239, 231, 0.32);
 }
 
 .footer-grid {
@@ -1314,7 +1331,7 @@
   display: grid;
   gap: 6px;
   text-align: right;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--inverse-muted);

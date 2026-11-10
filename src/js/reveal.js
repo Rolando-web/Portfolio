@@ -25,27 +25,40 @@ export function initReveal() {
   targets.forEach((target) => observer.observe(target));
 }
 
-/* ── Image parallax inside work plates ─────────────────────── */
+/* ── Image and number parallax inside work plates ──────────── */
 export function initParallax() {
   const media = [...document.querySelectorAll(".work-media img")];
-  if (!media.length || reducedMotion.matches) return;
+  const floaters = [...document.querySelectorAll("[data-parallax]")];
+  if ((!media.length && !floaters.length) || reducedMotion.matches) return;
 
   let frame = 0;
 
+  function rowProgress(element) {
+    const row = element.closest(".work-row");
+    if (!row) return null;
+    const rect = row.getBoundingClientRect();
+    const viewport = window.innerHeight;
+    if (rect.bottom < -200 || rect.top > viewport + 200) return null;
+
+    // -1 at the bottom of the viewport, +1 at the top.
+    return (rect.top + rect.height / 2 - viewport / 2) / (viewport + rect.height);
+  }
+
   function render() {
     frame = 0;
-    const viewport = window.innerHeight;
 
     media.forEach((img) => {
-      const row = img.closest(".work-row");
-      if (!row) return;
-      const rect = row.getBoundingClientRect();
-      if (rect.bottom < -200 || rect.top > viewport + 200) return;
-
-      // -1 at the bottom of the viewport, +1 at the top.
-      const progress = (rect.top + rect.height / 2 - viewport / 2) / (viewport + rect.height);
+      const progress = rowProgress(img);
+      if (progress === null) return;
       const shift = Math.max(-30, Math.min(30, progress * -60));
       img.style.setProperty("--py", `${shift.toFixed(1)}px`);
+    });
+
+    floaters.forEach((element) => {
+      const progress = rowProgress(element);
+      if (progress === null) return;
+      const shift = Math.max(-22, Math.min(22, progress * -44));
+      element.style.setProperty("--ny", `${shift.toFixed(1)}px`);
     });
   }
 

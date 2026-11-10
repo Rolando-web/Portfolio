@@ -30,7 +30,7 @@ Copy is mirrored from `index.html`. Change this file first, then the markup.
 
 - URL: https://github.com/Rolando-web/Canson-s-Order-Tracking-and-Workforce-Tasking-System
 - Action label: View repository
-- Stack: Laravel 12, PHP 8.2, MySQL, Blade, Tailwind, Vite, Pest
+- Stack: Laravel 12, PHP 8.2, MySQL, Blade, Tailwind, Vite
 - Description: Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics.
 - Screenshots: pending — live service unreachable on 2026-11-09/10.
 

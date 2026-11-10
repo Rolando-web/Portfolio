@@ -92,6 +92,10 @@ try {
     tickerAnimation: getComputedStyle(document.querySelector(".ticker-track")).animationName,
     heroAnimation: getComputedStyle(document.querySelector(".hero-line > span")).animationName,
     cursor: Boolean(document.querySelector(".cursor")),
+    plateOpacity: getComputedStyle(document.querySelector(".work-row")).opacity,
+    plateClip: getComputedStyle(document.querySelector(".work-row")).clipPath,
+    copyOpacity: getComputedStyle(document.querySelector(".work-copy")).opacity,
+    ruleTransform: getComputedStyle(document.querySelector(".sheet-head"), "::after").transform,
     before: document.querySelector(".carousel-indicator.active")?.getAttribute("aria-label"),
   }));
   await new Promise((r) => setTimeout(r, 4600));
@@ -116,6 +120,23 @@ try {
     () => document.querySelector(".carousel-indicator.active")?.getAttribute("aria-label")
   );
   await page.keyboard.press("Escape");
+
+  /* Scroll choreography: plates, copy, rules, and parallax. */
+  await page.evaluate(() => document.getElementById("projects").scrollIntoView());
+  await new Promise((r) => setTimeout(r, 1500));
+  out.motion = await page.evaluate(() => {
+    const row = document.querySelector(".work-row");
+    const copy = row.querySelector(".work-copy");
+    return {
+      plateOpacity: getComputedStyle(row).opacity,
+      plateClip: getComputedStyle(row).clipPath,
+      copyOpacity: getComputedStyle(copy).opacity,
+      copyTransform: getComputedStyle(copy).transform,
+      ruleTransform: getComputedStyle(document.querySelector(".sheet-head"), "::after").transform,
+      numberShift: row.querySelector(".work-num").style.getPropertyValue("--ny"),
+      imageShift: row.querySelector(".work-media img").style.getPropertyValue("--py"),
+    };
+  });
 
   /* Index overlay behaviour on mobile. */
   await page.setViewport({ width: 390, height: 844 });

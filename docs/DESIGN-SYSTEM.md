@@ -33,18 +33,18 @@ screenshots are the only colour on the page.
 |---|---|---|
 | Display | Anton | Hero, sheet titles, project titles, indices. Uppercase, tight, 0.8–0.92 line-height |
 | Accent | Instrument Serif italic | One word per major heading, portrait caption |
-| Body | Archivo | Copy and controls, 17px / 1.6 |
-| Labels | Archivo | 9.5–11px uppercase, 0.12–0.16em tracking |
+| Body | Archivo | Copy and controls, 18px / 1.65, weight 500 |
+| Labels | Archivo | 12px uppercase, weight 500–600, 0.12–0.16em tracking |
 
 No monospace face is used. Arrows are text glyphs (`↗ ↓ ← → ×`), not icon fonts.
-The mobile label floor is 9.5px; body copy never goes below 15px.
+The mobile label floor is 12px; body copy never goes below 17px.
 
 ## Background
 
 Two layers, both fixed and decorative:
 
-1. **Graph paper** — four linear gradients: 20px minor grid and 100px major
-   grid, 16% line alpha at 32% layer opacity. Static.
+1. **Graph paper** — one uniform grid: a 20px square, 16% line alpha at 30%
+   layer opacity. No nested 100px major lines. Static.
 2. **Print trim** — a 1px white frame inset 10px with `mix-blend-mode:
    difference`, so it reads as a dark trim on paper and a light trim on the
    dark spreads.
@@ -59,16 +59,19 @@ A 2px scroll-progress bar sits at the top edge.
 - **Index overlay** — full-screen paper panel revealed with a bottom-up
   `clip-path` wipe. Four editorial rows (number / name / italic tag / arrow),
   staggered entrance, focus trap, `inert` background, Escape and link close.
-- **Hero** — meta rule, oversized two-line name (Anton + serif italic),
-  portrait plate, lede, actions, stack list, four-column stats strip, and a
-  full-bleed marquee ticker.
+- **Hero** — meta rule, oversized two-line name (Anton + serif italic) with a
+  small gap between the two lines, portrait plate, lede, actions, stack list,
+  four-column stats strip, and a full-bleed marquee ticker.
 - **Work sheets** — each project is a full-viewport-width spread:
   `1.16fr / 0.84fr` media-and-copy. Even rows reverse to
   `0.84fr / 1.16fr`. Copy padding resolves to `--edge`, so text aligns to the
   1240px measure while media bleeds to the viewport. Below 900px the spread
   stacks copy-first with a fixed media band.
 - **Canson plate** — the third row inverts to ink, with an outlined giant `03`
-  and a graph-paper media well.
+  and a plain ink media well.
+- **Sheet rules** — section heads close with a 3px ink rule that draws from left
+  to right on first view. Section and plate boundaries use 2–3px ink rules
+  instead of hairlines.
 - **Capability index** — two-column numbered ledger under the work plates.
 - **Credentials** — `1.5fr / 0.7fr` ledger + sticky badge preview. Hover or
   focus a row and the preview swaps; on mobile the badge thumbnail appears in
@@ -98,9 +101,15 @@ A 2px scroll-progress bar sits at the top edge.
 |---|---|---|
 | Hero line wipe | 1.1s, 0.14s stagger | Load |
 | Portrait rise | 0.9s | Load |
-| Scroll reveal | 0.8s | IntersectionObserver |
+| Scroll reveal | 0.8–0.9s | IntersectionObserver |
+| Plate wipe | 1.1s clip-path | First view / scroll |
+| Project copy slide | 0.9s, 160ms delay | First view / scroll |
+| Project image zoom | 1.2s, 1.07 → 1 | First view / scroll |
+| Sheet rule draw | 1.05s scaleX | First view / scroll |
+| Ledger stagger | 0.7s, 50ms steps | First view / scroll |
 | Ticker | 38s linear loop, pauses on hover | Always |
 | Image parallax | rAF, ±30px | Scroll |
+| Number parallax | rAF, ±22px | Scroll |
 | Magnetic button | 0.25s follow | Fine-pointer hover |
 | Index wipe | 0.7s clip-path | Open / close |
 | Index row stagger | 0.55s, 60ms steps | Overlay open |
@@ -116,9 +125,10 @@ auto-advancing.
 
 1. No accent hue. Emphasis comes from scale, weight, rules, and inversion.
 2. Square corners only.
-3. Borders before shadows.
+3. Borders before shadows. Structural rules are 2–3px ink, not hairlines.
 4. Anton for statements, Instrument Serif italic for one accent word, Archivo
-   for everything that must be read.
+   for everything that must be read. Body copy is never lighter than 500.
 5. Project screenshots keep their real colour inside a neutral frame.
 6. Full-bleed media, measured copy. Never let copy run wider than 64ch.
-7. Motion must clarify hierarchy, not decorate empty space.
+7. One uniform 20px graph grid; no nested major lines.
+8. Motion must clarify hierarchy, not decorate empty space.

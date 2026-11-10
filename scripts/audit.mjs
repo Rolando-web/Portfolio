@@ -122,8 +122,38 @@ try {
         h1Font: h1Style?.fontFamily,
         h1Size: h1Style?.fontSize,
         h1Weight: h1Style?.fontWeight,
+        heroGap:
+          document.querySelectorAll(".hero-line").length > 1
+            ? Math.round(
+                document.querySelectorAll(".hero-line")[1].getBoundingClientRect().top -
+                  document.querySelectorAll(".hero-line")[0].getBoundingClientRect().bottom
+              )
+            : null,
+        gridBackground: getComputedStyle(document.querySelector(".grid-layer")).backgroundSize,
+        gridGradients:
+          getComputedStyle(document.querySelector(".grid-layer")).backgroundImage.split("linear-gradient").length - 1,
         bodyFont: getComputedStyle(document.body).fontFamily,
         bodySize: getComputedStyle(document.body).fontSize,
+        bodyWeight: getComputedStyle(document.body).fontWeight,
+        typeScale: {
+          sheetMeta: getComputedStyle(document.querySelector(".sheet-meta")).fontSize,
+          sheetLede: getComputedStyle(document.querySelector(".sheet-lede")).fontSize,
+          workKicker: getComputedStyle(document.querySelector(".work-kicker")).fontSize,
+          workDesc: getComputedStyle(document.querySelector(".work-desc")).fontSize,
+          credSub: getComputedStyle(document.querySelector(".cred-sub")).fontSize,
+          fieldLabel: getComputedStyle(document.querySelector(".field label")).fontSize,
+          footerMeta: getComputedStyle(document.querySelector(".footer-meta")).fontSize,
+        },
+        sheetRule: (() => {
+          const head = document.querySelector(".sheet-head");
+          if (!head) return null;
+          const after = getComputedStyle(head, "::after");
+          return {
+            height: after.height,
+            transform: after.transform,
+            visible: head.classList.contains("is-visible"),
+          };
+        })(),
         bodyBg: getComputedStyle(document.body).backgroundColor,
         gridSize: getComputedStyle(document.documentElement).getPropertyValue("--grid").trim(),
         brokenImages: broken,

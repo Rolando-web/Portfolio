@@ -406,7 +406,7 @@ URL: `https://canson-s-order-tracking-and-workforce.onrender.com/`
 - Description: order, inventory, and workforce platform for a supplies business; RBAC, multi-phase orders, employee assignments, production progress, damage/return tracking, stock audit trails, scheduling, analytics.
 - Images: `./assets/images/projects/canson/01-login.png` … `05-analytics.png`
 - URL: live link once confirmed (or repo link if there is no deployment).
-- Stack: Laravel 12 · PHP 8.2 · MySQL · Blade · Tailwind · Vite · Pest
+- Stack: Laravel 12 · PHP 8.2 · MySQL · Blade · Tailwind · Vite
 
 ### 3B — Implementation
 - [ ] Lock the final list: **LMS + TravelConnect + Canson**, and remove the four placeholder projects.
