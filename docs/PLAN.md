@@ -6,6 +6,13 @@
 > **Created:** 2026-11-09
 > **Status:** Planning complete — awaiting build agent
 
+> **Superseding note (2026-11-10):** The original plan kept a top header and a
+> Swiper project slider. After review, the implementation replaced both: the site
+> now uses a fixed left rail (top bar + drawer on mobile), an asymmetric bento
+> projects grid, a 20px background grid, and a certificate ledger. Swiper was
+> removed from the projects section; the custom modal carousel remains. Where
+> this document still mentions Swiper, treat it as historical context.
+
 ---
 
 ## 1. Objectives

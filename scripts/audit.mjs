@@ -53,36 +53,58 @@ try {
         };
       };
 
+      const visible = (selector) => {
+        const el = document.querySelector(selector);
+        return Boolean(el && el.getClientRects().length > 0);
+      };
+
       const broken = [...document.images]
+        .filter((img) => img.getClientRects().length > 0)
         .filter((img) => !(img.complete && img.naturalWidth > 0))
         .map((img) => img.getAttribute("src"));
 
       const hero = document.querySelector("h1");
       const style = hero ? getComputedStyle(hero) : null;
+      const bento = document.querySelector(".bento");
+      const bentoBox = bento?.getBoundingClientRect();
+      const tileOverflow = [...document.querySelectorAll(".bento-card")].some((tile) => {
+        const r = tile.getBoundingClientRect();
+        if (!bentoBox) return false;
+        return r.right > bentoBox.right + 1 || r.left < bentoBox.left - 1;
+      });
 
       return {
         overflowX: document.documentElement.scrollWidth - window.innerWidth,
         docHeight: document.documentElement.scrollHeight,
         box: {
-          header: box(".site-header"),
+          rail: box(".rail"),
+          topBar: box(".top-bar"),
           hero: box(".hero"),
           h1: box(".hero h1"),
-          profile: box(".profile-frame"),
+          profile: box(".portrait"),
           projects: box("#projects"),
           firstCard: box(".project-card"),
-          certGrid: box(".cert-grid"),
+          bento: box(".bento"),
+          ledger: box(".ledger"),
           contactForm: box(".contact-form"),
           footer: box(".site-footer"),
         },
         h1Font: style?.fontFamily,
         h1Size: style?.fontSize,
         bodyFont: getComputedStyle(document.body).fontFamily,
+        bodySize: getComputedStyle(document.body).fontSize,
         bodyBg: getComputedStyle(document.body).backgroundColor,
+        gridSize: getComputedStyle(document.documentElement).getPropertyValue("--grid").trim(),
         brokenImages: broken,
-        navVisible: getComputedStyle(document.querySelector(".nav-links")).display,
-        toggleVisible: getComputedStyle(document.querySelector(".nav-toggle")).display,
-        swiperSlides: document.querySelectorAll(".swiper-slide").length,
+        railVisible: visible(".rail"),
+        railNavVisible: visible(".rail-nav"),
+        topBarVisible: visible(".top-bar"),
+        toggleVisible: visible(".nav-toggle"),
+        bentoColumns: bento ? getComputedStyle(bento).gridTemplateColumns : null,
+        bentoTileOverflow: tileOverflow,
+        bentoCards: document.querySelectorAll(".bento-card").length,
         projectCards: document.querySelectorAll(".project-card").length,
+        ledgerRows: document.querySelectorAll(".ledger-row").length,
         fontsLoaded: document.fonts.status,
       };
     });
@@ -93,10 +115,10 @@ try {
   await page.goto(base, { waitUntil: "networkidle2", timeout: 60000 });
   await new Promise((resolve) => setTimeout(resolve, 800));
 
-  const modalAudit = async (index) => {
-    await page.evaluate((i) => {
-      document.querySelectorAll(".view-project-btn")[i]?.click();
-    }, index);
+  const modalAudit = async (selector) => {
+    await page.evaluate((sel) => {
+      document.querySelector(sel)?.click();
+    }, selector);
     await new Promise((resolve) => setTimeout(resolve, 700));
     return page.evaluate(() => {
       const modal = document.getElementById("projectModal");
@@ -124,10 +146,13 @@ try {
     });
   };
 
-  report.modalLms = await modalAudit(0);
+  report.modalLms = await modalAudit('.project-card[data-title*="Library"] .view-project-btn');
   await page.keyboard.press("Escape");
   await new Promise((resolve) => setTimeout(resolve, 400));
-  report.modalCanson = await modalAudit(2);
+  report.modalTravelConnect = await modalAudit('.project-card[data-title="TravelConnect"] .view-project-btn');
+  await page.keyboard.press("Escape");
+  await new Promise((resolve) => setTimeout(resolve, 400));
+  report.modalCanson = await modalAudit('.project-card[data-title*="Canson"] .view-project-btn');
   await page.keyboard.press("Escape");
 
   // Contact form: invalid submit, then valid-but-too-fast, then honeypot.

@@ -15,8 +15,8 @@ body {
   background: var(--canvas);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -76,7 +76,6 @@ ol {
 }
 
 main,
-.site-header,
 .site-footer {
   position: relative;
   z-index: 1;
@@ -104,7 +103,7 @@ main,
   color: var(--inverse-ink);
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transform: translateY(-160%);
   transition: transform 0.2s var(--ease);
@@ -114,10 +113,10 @@ main,
   transform: translateY(0);
 }
 
-/* ── Grid background ─────────────────────────────────────────── */
+/* ── Graph grid ──────────────────────────────────────────────── */
 .grid-layer {
   position: fixed;
-  inset: -20%;
+  inset: -10%;
   z-index: 0;
   pointer-events: none;
   background-image:
@@ -130,33 +129,11 @@ main,
     var(--grid) var(--grid),
     calc(var(--grid) * 5) calc(var(--grid) * 5),
     calc(var(--grid) * 5) calc(var(--grid) * 5);
-  opacity: 0.62;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 28%, #000 18%, transparent 78%);
-  mask-image: radial-gradient(ellipse at 50% 28%, #000 18%, transparent 78%);
-  animation: grid-drift 90s linear infinite;
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(ellipse at 46% 24%, #000 20%, transparent 80%);
+  mask-image: radial-gradient(ellipse at 46% 24%, #000 20%, transparent 80%);
+  animation: grid-drift 120s linear infinite;
   will-change: background-position;
-}
-
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(26, 26, 24, 0.055), transparent 68%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.4s var(--ease);
-  will-change: transform;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cursor-glow {
-    opacity: 1;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -166,9 +143,5 @@ main,
 
   .grid-layer {
     animation: none;
-  }
-
-  .cursor-glow {
-    display: none;
   }
 }

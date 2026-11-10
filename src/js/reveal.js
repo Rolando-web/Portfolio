@@ -31,29 +31,3 @@ export function initReveal() {
 
   [...targets, ...rules].forEach((element) => observer.observe(element));
 }
-
-export function initCursorGlow() {
-  const glow = document.querySelector(".cursor-glow");
-  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  if (!glow || !finePointer.matches || reducedMotion.matches) return;
-
-  let frame = null;
-  let x = 0;
-  let y = 0;
-
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      x = event.clientX;
-      y = event.clientY;
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        glow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-        frame = null;
-      });
-    },
-    { passive: true }
-  );
-}

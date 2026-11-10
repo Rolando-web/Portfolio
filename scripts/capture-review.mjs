@@ -20,6 +20,28 @@ const browser = await puppeteer.launch({
 
 const problems = [];
 
+async function loadLazyImages(page) {
+  await page.evaluate(async () => {
+    const step = window.innerHeight * 0.8;
+    for (let y = 0; y < document.body.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((resolve) => setTimeout(resolve, 120));
+    }
+    window.scrollTo(0, 0);
+    await new Promise((resolve) => setTimeout(resolve, 400));
+  });
+
+  await page
+    .waitForFunction(
+      () =>
+        [...document.images]
+          .filter((img) => img.getClientRects().length > 0)
+          .every((img) => img.complete && img.naturalWidth > 0),
+      { timeout: 10000 }
+    )
+    .catch(() => {});
+}
+
 try {
   const page = await browser.newPage();
   page.on("pageerror", (error) => problems.push(`pageerror: ${error.message}`));
@@ -38,6 +60,7 @@ try {
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
   await page.goto(base, { waitUntil: "networkidle2", timeout: 60000 });
   await new Promise((resolve) => setTimeout(resolve, 1400));
+  await loadLazyImages(page);
   await page.screenshot({ path: path.join(outDir, "desktop-full.png"), fullPage: true });
   await page.screenshot({ path: path.join(outDir, "desktop-fold.png") });
 
@@ -53,6 +76,7 @@ try {
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
   await page.reload({ waitUntil: "networkidle2", timeout: 60000 });
   await new Promise((resolve) => setTimeout(resolve, 1200));
+  await loadLazyImages(page);
   await page.screenshot({ path: path.join(outDir, "mobile-full.png"), fullPage: true });
 
   await page.evaluate(() => {
@@ -64,13 +88,15 @@ try {
   const audit = await page.evaluate(() => ({
     title: document.title,
     h1: document.querySelector("h1")?.innerText,
-    slides: document.querySelectorAll(".project-card").length,
-    images: [...document.images].map((img) => ({
-      src: img.getAttribute("src"),
-      ok: img.complete && img.naturalWidth > 0,
-    })),
+    projectCards: document.querySelectorAll(".project-card").length,
+    bentoCards: document.querySelectorAll(".bento-card").length,
+    images: [...document.images]
+      .filter((img) => img.getClientRects().length > 0)
+      .map((img) => ({
+        src: img.getAttribute("src"),
+        ok: img.complete && img.naturalWidth > 0,
+      })),
     horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
-    swiperLoaded: Boolean(window.Swiper),
     emailjsLoaded: Boolean(window.emailjs),
   }));
 

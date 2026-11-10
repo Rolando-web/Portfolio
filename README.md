@@ -31,15 +31,14 @@ src/css/
   main.css                 entry — imports only
   tokens.css               colors, type, spacing
   base.css                 reset, grid background, focus, skip link
-  layout.css               header, hero, sections, footer, responsive
-  components.css           buttons, cards, forms, modal, certificates
+  layout.css               rail, top bar, drawer, hero, sections, footer
+  components.css           buttons, bento, ledger, form, modal
   animations.css           keyframes, reveal states, reduced motion
 src/js/
   main.js                  entry — initializes modules
-  navigation.js            drawer, scroll progress, active nav
-  swiper-init.js           project carousel
+  navigation.js            rail/drawer nav, scroll progress, active section
   project-modal.js         modal, gallery, focus trap, autoplay rules
-  reveal.js                scroll reveals + cursor highlight
+  reveal.js                scroll reveals
   rate-limit.js            reusable request throttle
   contact-form.js          validation + EmailJS submission
   config.js                EmailJS identifiers (public by design)
@@ -83,9 +82,9 @@ See `docs/OWNER-ACTIONS.md` for the provider-side steps.
 
 ## Motion
 
-All animation respects `prefers-reduced-motion: reduce`: the grid stops
-drifting, reveals render immediately, the cursor highlight is removed, and
-the project gallery stops auto-advancing.
+All animation respects `prefers-reduced-motion: reduce`: the 20px grid stops
+drifting across its 120s loop, reveals render immediately, and the project
+gallery stops auto-advancing.
 
 ## Credits
 

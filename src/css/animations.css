@@ -12,7 +12,7 @@
     background-position: 0 0, 0 0, 0 0, 0 0;
   }
   to {
-    background-position: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
+    background-position: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
   }
 }
 
@@ -72,7 +72,7 @@
   animation-delay: 0.24s;
 }
 
-.hero-figure {
+.portrait {
   animation: rise 0.9s var(--ease) 0.18s both;
 }
 
@@ -88,14 +88,13 @@
 
   [data-reveal],
   .hero-copy > *,
-  .hero-figure {
+  .portrait {
     opacity: 1;
     transform: none;
   }
 
-  .project-card:hover,
-  .project-card:hover .project-media img,
-  .cert-card:hover .cert-media img {
+  .bento-media:hover img,
+  .ledger-row:hover {
     transform: none;
   }
 }

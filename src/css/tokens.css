@@ -1,21 +1,22 @@
 :root {
-  --canvas: #e6e5e0;
-  --surface: #efeee9;
-  --surface-2: #deddd7;
-  --surface-3: #d4d3cc;
-  --ink: #1a1a18;
-  --ink-soft: #3a3a36;
-  --muted: #5f5f59;
-  --line: rgba(26, 26, 24, 0.12);
-  --line-strong: rgba(26, 26, 24, 0.28);
-  --inverse: #1a1a18;
-  --inverse-ink: #efeee9;
-  --grid: 40px;
-  --maxw: 1240px;
-  --gutter: clamp(20px, 4vw, 48px);
+  --canvas: #e7e6e1;
+  --surface: #f1f0eb;
+  --surface-2: #dbdad3;
+  --surface-3: #cfcec6;
+  --ink: #171715;
+  --ink-soft: #33332f;
+  --muted: #5c5c55;
+  --line: rgba(23, 23, 21, 0.14);
+  --line-strong: rgba(23, 23, 21, 0.34);
+  --inverse: #171715;
+  --inverse-ink: #f1f0eb;
+  --grid: 20px;
+  --rail: 236px;
+  --maxw: 1180px;
+  --gutter: clamp(22px, 3.4vw, 54px);
   --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
   --font-body: "DM Sans", "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --radius: 2px;
+  --progress: 0;
 }
