@@ -25,11 +25,20 @@
   min-width: 0;
 }
 
-.brand-square {
+.brand-mark {
   flex: 0 0 auto;
-  width: 9px;
-  height: 9px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding-top: 1px;
   background: var(--ink);
+  color: var(--inverse-ink);
+  font-family: var(--font-display);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  box-shadow: inset 0 0 0 1px rgba(241, 239, 231, 0.28);
 }
 
 .brand-name {

@@ -37,6 +37,12 @@ Run date: 2026-11-10. Latest refactor verification: 2026-11-18. Local server: `h
 - [x] `node scripts/capture-review.mjs` reports no console or network problems.
 - [x] Review captures match the pre-refactor set; only the live clock and contact-reveal timing differ.
 
+## Brand mark — 2026-11-18
+
+- [x] Masthead square replaced with an RL monogram tile: ink field, paper letters, hairline inner rule.
+- [x] Favicon, Apple touch icon, and 512px icon regenerated from the same monogram.
+- [x] Header rechecked at 360 / 390 / 1024 / 1440; no overflow and the mark stays legible.
+
 ## Phase 2 — Assets
 
 - [x] TravelConnect: 5 shipped screenshots; admin spares are captured to ignored `docs/baseline/`.

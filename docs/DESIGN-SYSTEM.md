@@ -81,6 +81,8 @@ A 2px scroll-progress bar sits at the top edge.
 
 ## Components
 
+- **Brand mark** — the RL monogram on an ink tile with a hairline inner rule;
+  used in the masthead and as the favicon / Apple touch icon.
 - **Buttons** — square, 1px ink border, uppercase label, invert on hover.
   Primary hero button is magnetic on fine pointers.
 - **Work plate** — the whole media area is a button that opens the project

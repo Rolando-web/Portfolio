@@ -49,7 +49,7 @@ src/html/
     sheet-02-credentials.html  Sheet 02 — credentials
     sheet-03-contact.html  Sheet 03 — contact
 assets/images/
-  brand/                   favicon / brand mark
+  brand/                   RL monogram, favicon, Apple touch icon
   profile/                 portrait
   certificates/            Credly badges
   projects/lms/            Library Management System screenshots
