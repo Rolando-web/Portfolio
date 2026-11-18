@@ -5,8 +5,8 @@
  * Restrict the allowed origins for this service in the EmailJS dashboard.
  */
 export default {
-  serviceId: "service_cajwo1c",
-  templateId: "template_3qv43gg",
-  publicKey: "h1Ra7lI1Kl4jI9ZhB",
+  serviceId: "service_pl6nvwl",
+  templateId: "template_amol98e",
+  publicKey: "2LnPrwykKqu9Lumbe",
   configured: true,
 };

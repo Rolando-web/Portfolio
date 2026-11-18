@@ -67,8 +67,8 @@ A 2px scroll-progress bar sits at the top edge.
   `0.84fr / 1.16fr`. Copy padding resolves to `--edge`, so text aligns to the
   1240px measure while media bleeds to the viewport. Below 900px the spread
   stacks copy-first with a fixed media band.
-- **Canson plate** — the third row inverts to ink, with an outlined giant `03`
-  and a plain ink media well.
+- **Canson plate** — the third row inverts to ink, carries the login screenshot
+  in its media well, and keeps the outlined giant `03` in the copy.
 - **Sheet rules** — section heads close with a 3px ink rule that draws from left
   to right on first view. Section and plate boundaries use 2–3px ink rules
   instead of hairlines.
@@ -101,12 +101,13 @@ A 2px scroll-progress bar sits at the top edge.
 |---|---|---|
 | Hero line wipe | 1.1s, 0.14s stagger | Load |
 | Portrait rise | 0.9s | Load |
-| Scroll reveal | 0.8–0.9s | IntersectionObserver |
+| AOS section reveal | 0.8s fade-up, 28px travel | AOS scroll observer |
+| Work plate reveal | 0.8–0.9s | IntersectionObserver |
 | Plate wipe | 1.1s clip-path | First view / scroll |
 | Project copy slide | 0.9s, 160ms delay | First view / scroll |
 | Project image zoom | 1.2s, 1.07 → 1 | First view / scroll |
 | Sheet rule draw | 1.05s scaleX | First view / scroll |
-| Ledger stagger | 0.7s, 50ms steps | First view / scroll |
+| Credential stagger | 0.7s, 50ms steps | IntersectionObserver |
 | Ticker | 38s linear loop, pauses on hover | Always |
 | Image parallax | rAF, ±30px | Scroll |
 | Number parallax | rAF, ±22px | Scroll |
@@ -116,10 +117,10 @@ A 2px scroll-progress bar sits at the top edge.
 | Certificate swap | 0.22s fade | Row hover / focus |
 | Gallery slide | 0.55s; 4s auto | Controls / autoplay |
 
-Everything above collapses under `prefers-reduced-motion: reduce`: reveals and
-hero lines render immediately, the ticker becomes a scrollable strip, parallax,
-magnetism, and the custom cursor are disabled, and the gallery stops
-auto-advancing.
+Everything above collapses under `prefers-reduced-motion: reduce`: AOS and
+custom reveals and hero lines render immediately, the ticker becomes a
+scrollable strip, parallax, magnetism, and the custom cursor are disabled, and
+the gallery stops auto-advancing.
 
 ## Rules
 

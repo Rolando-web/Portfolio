@@ -853,6 +853,6 @@ Switch to a **build agent** and start at **Phase 0**. Complete Phase 1 (file str
 
 - Tailwind was removed entirely instead of built locally. The Paper Graphite system is custom CSS, so the CDN dependency and the unused Tailwind CLI were deleted.
 - src/js/config.js is committed rather than gitignored. EmailJS service, template, and public-key values are delivered to the browser by design; hiding the file is what silently broke the form. Origin rules in the EmailJS dashboard are the actual control.
-- Canson was added with a repository link and an empty-gallery state because the Render deployment did not respond. Its folder README lists the exact capture steps.
+- Canson now ships 11 owner-supplied screenshots in a login-first gallery and keeps its repository link; the live Render deployment remains unconfirmed. See `assets/images/projects/canson/README.md` for the gallery order.
 - The four placeholder projects were removed.
 - Screenshot tooling lives in scripts/; QA results in docs/QA-CHECKLIST.md.

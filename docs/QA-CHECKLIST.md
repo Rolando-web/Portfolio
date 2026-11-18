@@ -1,6 +1,6 @@
 # QA Checklist
 
-Run date: 2026-11-10. Local server: `http://localhost:4173`.
+Run date: 2026-11-10. Latest refactor verification: 2026-11-18. Local server: `http://localhost:4173`.
 
 ## Phase 0 — Setup
 
@@ -24,12 +24,25 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 - [x] No references remain to `images/LMS`, `src/style.css`, `script.js`, or `email.js`.
 - [x] Root contains only entry files, config, and docs.
 
+## Structure refactor — 2026-11-18
+
+- [x] `index.html` split into `src/html/index.template.html`, six shared partials, and four sheet files.
+- [x] Generated `index.html` keeps the pre-split markup; verified after whitespace normalization.
+- [x] `npm run build` composes the page; `npm run dev` rebuilds on page load; `vercel.json` runs the build.
+- [x] HTML lives under `src/html/`, CSS under `src/css/`, and JS under `src/js/`.
+- [x] Unused `.sr-only` rule, orphaned gallery `is-empty` toggle, duplicate hero capture, and temporary split/scan scripts removed.
+- [x] Unused TravelConnect admin spare removed from `assets/`; capture scratch views go to `docs/baseline/`.
+- [x] `node scripts/audit.mjs` passes at 360 / 390 / 768 / 1024 / 1440 / 1920: no overflow or broken images.
+- [x] `node scripts/verify.mjs` passes rate limit, a11y, EmailJS mapping, reduced motion, modal, overlay, and keyboard checks.
+- [x] `node scripts/capture-review.mjs` reports no console or network problems.
+- [x] Review captures match the pre-refactor set; only the live clock and contact-reveal timing differ.
+
 ## Phase 2 — Assets
 
-- [x] TravelConnect: 6 screenshots captured at 1440×900 (5 shipped, 1 spare).
+- [x] TravelConnect: 5 shipped screenshots; admin spares are captured to ignored `docs/baseline/`.
 - [x] Screenshots grouped in `assets/images/projects/travelconnect/`.
 - [x] All PNGs re-compressed; 1.4 MB saved.
-- [ ] Canson screenshots blocked; deferral documented in its folder README.
+- [x] Canson: 11 owner-supplied screenshots added and ordered login → dashboard → operations.
 
 ### Screenshot provenance
 
@@ -40,13 +53,13 @@ Run date: 2026-11-10. Local server: `http://localhost:4173`.
 | TravelConnect | `03-hotels.png` | `/hotels` | 1440×900 | 2026-11-10 |
 | TravelConnect | `04-deals.png` | `/deals` | 1440×900 | 2026-11-10 |
 | TravelConnect | `05-admin-dashboard.png` | `/admin` (authenticated) | 1440×900 | 2026-11-10 |
-| Canson | — | Render deployment timed out | — | — |
+| Canson | `login.png` … `1.png` (11 screens) | Owner-supplied captures | ~1920×942 | 2026-11 |
 
 ## Phase 3 — Projects
 
 - [x] LMS retained with all 14 screenshots rewired.
 - [x] TravelConnect added with 5 screenshots.
-- [x] Canson added with repository link and empty-gallery guard.
+- [x] Canson added with 11 screenshots, a login-first gallery, and the repository link.
 - [x] Four placeholder projects removed.
 - [x] Empty gallery hides arrows and indicators and does not auto-advance.
 - [x] Images have `width`, `height`, `loading`, and `decoding`.
@@ -134,15 +147,18 @@ modal, carousel, form, rate limiting, and section IDs are unchanged.
 
 ### Interaction
 
-- [x] Three full-bleed project plates; docs-only Canson plate; no Swiper.
+- [x] Three full-bleed project plates; no Swiper.
 - [x] LMS modal: 14 slides, arrows and indicators visible, "Visit site".
 - [x] TravelConnect modal: 5 slides, arrows and indicators visible, "Visit site".
-- [x] Canson modal: empty state, controls hidden, "View repository".
+- [x] Canson modal: 11 slides, login first then dashboard, "View repository".
 - [x] Escape closes; arrow keys navigate; focus returns to trigger.
 - [x] Index overlay: `aria-expanded`, body lock, Escape close, focus restore, `inert` background.
 - [x] Index overlay link closes and lands `#certificates` at 86px below the viewport top.
 - [x] Credential rows swap the sticky preview on hover/focus.
+- [x] AOS sections reveal once on scroll, including hero, sheet heads, capability rows, contact, and footer.
+- [x] AOS and custom reveals both render immediately under reduced motion.
 - [x] Form: invalid submit highlights fields; honeypot short-circuits; errors described.
+- [x] EmailJS payload maps `name`, `Email`, `message`, `time`, `title`, and `reply_to` (mocked send; no real email).
 
 ### Contrast
 
@@ -176,7 +192,8 @@ modal, carousel, form, rate limiting, and section IDs are unchanged.
 - Visual judgment pending: review `docs/baseline/review/desktop-fold.png`,
   `desktop-index.png`, `desktop-projects.png`, `desktop-certificates.png`,
   `desktop-contact.png`, `mobile-fold.png`, and `mobile-index.png`.
-- Canson screenshots pending.
+- Canson live deployment not confirmed; the project action stays on the
+  repository until it is.
 - Real EmailJS delivery not sent during automated QA (owner step 1).
 - Lighthouse not yet run; no local Chrome audit tooling installed.
 - Canonical/OG URLs assume the existing Vercel deployment.

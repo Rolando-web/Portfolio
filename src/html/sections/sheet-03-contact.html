@@ -1,0 +1,82 @@
+<section id="contact" class="sheet sheet--contact" data-sheet="03" data-label="Contact">
+    <div class="shell contact-grid">
+        <div class="contact-left" data-aos="fade-up">
+            <div class="contact-kicker">
+                <span>Sheet 03 — Contact</span>
+                <span>Open for work</span>
+            </div>
+
+            <h2 class="contact-title">Let's make<br><em>something</em><br>useful.</h2>
+            <p class="contact-copy">
+                Have a project in mind? Feel free to reach out and let's create something amazing.
+                I usually reply within two business days.
+            </p>
+
+            <a class="contact-email" href="mailto:tluayon7@gmail.com">tluayon7@gmail.com <span
+                    aria-hidden="true">↗</span></a>
+
+            <dl class="contact-details">
+                <div>
+                    <dt>Phone</dt>
+                    <dd><a href="tel:+639702446885">+63 970 244 6885</a></dd>
+                </div>
+                <div>
+                    <dt>Location</dt>
+                    <dd>Davao City, Philippines</dd>
+                </div>
+            </dl>
+
+            <div class="contact-socials" aria-label="Social profiles">
+                <a href="https://github.com/Rolando-web" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/rolando-luayon-52ab682b9/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="https://www.facebook.com/zkel123" target="_blank" rel="noopener noreferrer">Facebook
+                    ↗</a>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate data-aos="fade-up" data-aos-delay="100">
+            <div class="field">
+                <label for="name">Name</label>
+                <input style="padding-left: 10px;" type="text" id="name" name="name" required maxlength="80"
+                    autocomplete="name" placeholder="Your name" aria-describedby="name-error">
+                <p class="field-error" id="name-error" data-error-for="name" hidden></p>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input style="padding-left: 10px;" type="email" id="email" name="email" required maxlength="120"
+                    autocomplete="email" placeholder="your.email@gmail.com" aria-describedby="email-error">
+                <p class="field-error" id="email-error" data-error-for="email" hidden></p>
+            </div>
+
+            <div class="field">
+                <label for="title">Title</label>
+                <input style="padding-left: 10px;" type="text" id="title" name="title" required maxlength="120"
+                    placeholder="Your project title" aria-describedby="title-error">
+                <p class="field-error" id="title-error" data-error-for="title" hidden></p>
+            </div>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea style="padding-left: 10px;" id="message" name="message" required rows="5"
+                    maxlength="2000" placeholder="Tell me about your project..."
+                    aria-describedby="message-error"></textarea>
+                <p class="field-error" id="message-error" data-error-for="message" hidden></p>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn">
+                <span data-label>Send message</span>
+                <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="form-note">One message per minute · max three per ten minutes.</p>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-panel">
+        <div class="modal-head">
+            <div>
+                <p class="modal-kicker">Project file</p>
+                <h3 id="modalTitle" class="modal-title">Project Title</h3>
+            </div>
+            <button id="closeModal" class="modal-close" type="button" aria-label="Close project details">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <div class="modal-gallery" id="modalGallery">
+            <div id="carouselImages" class="carousel"></div>
+            <button id="prevBtn" class="gallery-btn gallery-prev" type="button" aria-label="Previous screenshot">
+                <span aria-hidden="true">←</span>
+            </button>
+            <button id="nextBtn" class="gallery-btn gallery-next" type="button" aria-label="Next screenshot">
+                <span aria-hidden="true">→</span>
+            </button>
+            <div id="carouselIndicators" class="carousel-indicators"></div>
+        </div>
+
+        <div class="modal-foot">
+            <p id="modalDescription" class="modal-copy">Project description goes here.</p>
+            <a id="visitSiteBtn" class="btn" href="#" target="_blank" rel="noopener noreferrer">
+                <span data-label>Visit site</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </div>
+</div>

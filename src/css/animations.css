@@ -62,7 +62,8 @@
   animation: rise 0.9s var(--ease) 0.24s both;
 }
 
-/* Scroll reveal */
+/* Scroll reveal — custom observer keeps the work plates and credential
+   ledger choreography; AOS handles the section-level entrances. */
 [data-reveal] {
   opacity: 0;
   transform: translateY(26px);
@@ -81,25 +82,13 @@
   transform: none;
 }
 
-[data-reveal][data-delay="1"] {
-  --delay: 0.08s;
+/* AOS overrides — keep its travel distance in step with the dossier motion. */
+[data-aos="fade-up"] {
+  transform: translate3d(0, 28px, 0);
 }
 
-[data-reveal][data-delay="2"] {
-  --delay: 0.16s;
-}
-
-[data-reveal][data-delay="3"] {
-  --delay: 0.24s;
-}
-
-/* Directional reveals */
-[data-reveal="left"] {
-  transform: translateX(-48px);
-}
-
-[data-reveal="right"] {
-  transform: translateX(48px);
+[data-aos="fade-up"][data-aos].aos-animate {
+  transform: translate3d(0, 0, 0);
 }
 
 /* Plate wipe */
@@ -154,36 +143,20 @@
 }
 
 /* Ledger stagger */
-.capability-grid .cap-row:nth-child(1),
 .cred-list .cred-row:nth-child(1) {
   --delay: 0.02s;
 }
 
-.capability-grid .cap-row:nth-child(2),
 .cred-list .cred-row:nth-child(2) {
   --delay: 0.07s;
 }
 
-.capability-grid .cap-row:nth-child(3),
 .cred-list .cred-row:nth-child(3) {
   --delay: 0.12s;
 }
 
-.capability-grid .cap-row:nth-child(4),
 .cred-list .cred-row:nth-child(4) {
   --delay: 0.17s;
-}
-
-.capability-grid .cap-row:nth-child(5) {
-  --delay: 0.22s;
-}
-
-.capability-grid .cap-row:nth-child(6) {
-  --delay: 0.27s;
-}
-
-.capability-grid .cap-row:nth-child(7) {
-  --delay: 0.32s;
 }
 
 .cred-row[data-reveal] {
@@ -203,11 +176,6 @@
 
 /* Stacked layouts enter vertically to avoid horizontal overflow. */
 @media (max-width: 900px) {
-  [data-reveal="left"],
-  [data-reveal="right"] {
-    transform: translateY(28px);
-  }
-
   .work-row[data-reveal] .work-copy,
   .work-row:nth-child(even)[data-reveal] .work-copy {
     transform: translateY(24px);
@@ -225,10 +193,11 @@
   }
 
   [data-reveal],
+  [data-aos],
   .hero-line > span,
   .hero-portrait {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
     animation: none;
   }
 

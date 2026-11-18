@@ -151,7 +151,9 @@ try {
           return {
             height: after.height,
             transform: after.transform,
-            visible: head.classList.contains("is-visible"),
+            visible:
+              head.classList.contains("is-visible") ||
+              head.classList.contains("aos-animate"),
           };
         })(),
         bodyBg: getComputedStyle(document.body).backgroundColor,
@@ -172,6 +174,7 @@ try {
           mediaRightSecond: secondMedia && secondCopy ? secondMedia.left > secondCopy.left : null,
         },
         revealPending: document.querySelectorAll("[data-reveal]:not(.is-visible)").length,
+        aosPending: document.querySelectorAll("[data-aos]:not(.aos-animate)").length,
         sheetCurrent: document.querySelector("[data-sheet-current]")?.textContent,
         sheetLabel: document.querySelector("[data-sheet-label]")?.textContent,
         clock: document.getElementById("localClock")?.textContent,

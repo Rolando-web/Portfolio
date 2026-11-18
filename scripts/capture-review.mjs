@@ -61,7 +61,6 @@ try {
   await page.goto(base, { waitUntil: "networkidle2", timeout: 60000 });
   await new Promise((resolve) => setTimeout(resolve, 1600));
   await page.screenshot({ path: path.join(outDir, "desktop-fold.png") });
-  await page.screenshot({ path: path.join(outDir, "desktop-hero-full.png") });
   await page.evaluate(() => document.getElementById("indexToggle")?.click());
   await new Promise((resolve) => setTimeout(resolve, 900));
   await page.screenshot({ path: path.join(outDir, "desktop-index.png") });
@@ -93,6 +92,7 @@ try {
 
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
   await page.reload({ waitUntil: "networkidle2", timeout: 60000 });
+  await page.evaluate(() => window.scrollTo(0, 0));
   await new Promise((resolve) => setTimeout(resolve, 1400));
   await page.screenshot({ path: path.join(outDir, "mobile-fold.png") });
   await page.evaluate(() => document.getElementById("indexToggle")?.click());

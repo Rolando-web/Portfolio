@@ -1,4 +1,5 @@
 import config from "./config.js";
+import { buildEmailParams } from "./email-params.js";
 import { createRateLimiter, formatWait } from "./rate-limit.js";
 
 const MIN_FILL_MS = 3000;
@@ -171,13 +172,11 @@ export function initContactForm() {
     setStatus("Sending your message…");
 
     try {
-      await window.emailjs.send(config.serviceId, config.templateId, {
-        name: values.name.trim(),
-        email: values.email.trim(),
-        title: values.title.trim(),
-        message: values.message.trim(),
-        reply_to: values.email.trim(),
-      });
+      await window.emailjs.send(
+        config.serviceId,
+        config.templateId,
+        buildEmailParams(values)
+      );
 
       form.reset();
       firstInteraction = 0;

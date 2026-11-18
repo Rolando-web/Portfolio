@@ -1,6 +1,6 @@
 # Content — Source of Truth
 
-Copy is mirrored from `index.html`. Change this file first, then the markup.
+Copy is mirrored from `src/html/sections/`. Change this file first, then the section partials.
 
 ## Hero
 
@@ -32,7 +32,7 @@ Copy is mirrored from `index.html`. Change this file first, then the markup.
 - Action label: View repository
 - Stack: Laravel 12, PHP 8.2, MySQL, Blade, Tailwind, Vite
 - Description: Order, inventory, and workforce platform for a supplies business. Role-based access, multi-phase orders, employee assignments, production progress, damage and return tracking, stock audit trails, scheduling, and analytics.
-- Screenshots: pending — live service unreachable on 2026-11-09/10.
+- Screenshots: 11 owner-supplied captures in `assets/images/projects/canson/`, ordered login → dashboard → orders → schedule → assignments → inventory → products → stock in → suppliers → stock out → sales. The login screen is also the card cover.
 
 ## Certificates
 
@@ -56,5 +56,6 @@ Copy is mirrored from `index.html`. Change this file first, then the markup.
 - Four placeholder projects (E-Commerce, CMS, Task Management, Portfolio) were
   removed because they pointed at `example.com` and placeholder images.
 - No project titles, descriptions, URLs, or certificate links were rewritten.
-- The Canson description is intentionally live-link agnostic because its
-  deployment is currently unreachable.
+- The Canson description is intentionally live-link agnostic. The card action
+  still points to the repository; 11 owner-supplied screenshots now ship in a
+  login-first gallery.

@@ -1,12 +1,16 @@
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import puppeteer from "puppeteer-core";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const outDir = path.join(root, "assets", "images", "projects", "travelconnect");
+const assetDir = path.join(root, "assets", "images", "projects", "travelconnect");
+const scratchDir = path.join(root, "docs", "baseline", "travelconnect-admin");
 const chrome =
   process.env.CHROME_PATH ||
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+
+fs.mkdirSync(scratchDir, { recursive: true });
 
 const email = process.env.TC_EMAIL;
 const password = process.env.TC_PASS;
@@ -65,7 +69,7 @@ try {
   });
   await new Promise((r) => setTimeout(r, 5000));
 
-  await page.screenshot({ path: path.join(outDir, "05-admin-dashboard.png") });
+  await page.screenshot({ path: path.join(assetDir, "05-admin-dashboard.png") });
   console.log("saved 05-admin-dashboard.png at", page.url());
 
   await page.goto("https://travel-connect-xi.vercel.app/admin/bookings", {
@@ -73,7 +77,7 @@ try {
     timeout: 90000,
   });
   await new Promise((r) => setTimeout(r, 3500));
-  await page.screenshot({ path: path.join(outDir, "06-admin-bookings.png") });
+  await page.screenshot({ path: path.join(scratchDir, "06-admin-bookings.png") });
   console.log("saved 06-admin-bookings.png at", page.url());
 
   await page.goto("https://travel-connect-xi.vercel.app/admin/support", {
@@ -81,7 +85,7 @@ try {
     timeout: 90000,
   });
   await new Promise((r) => setTimeout(r, 3500));
-  await page.screenshot({ path: path.join(outDir, "07-admin-support.png") });
+  await page.screenshot({ path: path.join(scratchDir, "07-admin-support.png") });
   console.log("saved 07-admin-support.png at", page.url());
 } finally {
   await browser.close();

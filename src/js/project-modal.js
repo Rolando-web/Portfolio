@@ -9,7 +9,6 @@ export function initProjectModal() {
   const closeBtn = document.getElementById("closeModal");
   const carousel = document.getElementById("carouselImages");
   const indicators = document.getElementById("carouselIndicators");
-  const gallery = document.getElementById("modalGallery");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const modalTitle = document.getElementById("modalTitle");
@@ -110,9 +109,7 @@ export function initProjectModal() {
         "Screenshots pending. The live service was unavailable when this gallery was captured.";
       empty.appendChild(note);
       carousel.appendChild(empty);
-      gallery?.classList.add("is-empty");
     } else {
-      gallery?.classList.remove("is-empty");
       images.forEach((src, index) => {
         const slide = document.createElement("div");
         slide.className = "carousel-slide";

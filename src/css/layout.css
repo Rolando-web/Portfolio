@@ -577,7 +577,8 @@
   transition: transform 1.05s var(--ease) 0.12s;
 }
 
-.sheet-head.is-visible::after {
+.sheet-head.is-visible::after,
+.sheet-head.aos-animate::after {
   transform: scaleX(1);
 }
 
@@ -872,45 +873,6 @@
   color: var(--ink);
 }
 
-.work-media--pending {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(24px, 4vw, 48px);
-  background-color: #1b1b17;
-  transition: background-color 0.3s var(--ease);
-}
-
-.work-media--pending:hover {
-  background-color: #20201b;
-}
-
-.pending-big {
-  position: absolute;
-  top: clamp(18px, 3vw, 36px);
-  left: clamp(18px, 3vw, 36px);
-  font-family: var(--font-display);
-  font-size: clamp(6rem, 14vw, 13rem);
-  line-height: 0.72;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(241, 239, 231, 0.35);
-  pointer-events: none;
-}
-
-.pending-label {
-  position: relative;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(241, 239, 231, 0.25);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--inverse-muted);
-}
-
 /* ── Capability index ──────────────────────────────────────── */
 .capability {
   margin-top: clamp(56px, 8vw, 96px);
@@ -1062,7 +1024,9 @@
 }
 
 .cred-preview img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   filter: grayscale(1);
@@ -1588,10 +1552,5 @@
   .contact-details > div {
     grid-template-columns: 1fr;
     gap: 3px;
-  }
-
-  .pending-label {
-    flex-direction: column;
-    gap: 4px;
   }
 }

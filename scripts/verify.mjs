@@ -82,6 +82,25 @@ try {
     return { badButtons, badLinks, imagesWithoutAlt };
   });
 
+  /* EmailJS template mapping — no network request is made. */
+  out.emailTemplate = await page.evaluate(async () => {
+    const { buildEmailParams } = await import("/src/js/email-params.js");
+    const params = buildEmailParams(
+      {
+        name: "  Ana Cruz  ",
+        email: "  ana@example.com  ",
+        title: "  Portfolio build  ",
+        message: "  Hello there.  ",
+      },
+      new Date("2026-11-18T02:30:00Z")
+    );
+
+    return {
+      keys: Object.keys(params).sort(),
+      params,
+    };
+  });
+
   /* Reduced motion: ticker/hero stop, carousel does not auto-advance. */
   await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: "reduce" }]);
   await page.reload({ waitUntil: "networkidle2" });

@@ -1,6 +1,5 @@
 node_modules/
 docs/baseline/
-capture-profile/
 
 .env
 .env.*

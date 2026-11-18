@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Portfolio for Rolando Luayon — Laravel, PHP, and JavaScript systems.",
   "scripts": {
+    "build": "node scripts/build-html.mjs",
     "dev": "node scripts/dev-server.mjs",
     "capture:baseline": "node scripts/capture-baseline.mjs",
     "optimize:images": "node scripts/optimize-images.mjs"
